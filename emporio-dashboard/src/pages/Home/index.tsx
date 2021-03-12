@@ -1,15 +1,52 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
-import useLogged from "../../hooks/useLogged"
+import { useAdmin, useEditor } from "../../hooks/useRole";
+import { getListRequest } from "../../stores/ducks/beers/actions";
+import { getInfoRequest, getUsersRequest } from "../../stores/ducks/user/actions";
 
 export default function HomePage() {
-    const { isLogged, userID, role } = useSelector((state: any) => state.userReducer)
+    const { userID, role, isLogged, internalUsers } = useSelector((state: any) => state.userReducer)
+    const { beerList } = useSelector((state: any) => state.productReducer)
+    const isAdmin = useAdmin()
+    const isEditor = useEditor()
+    const dispatch = useDispatch()
+    const token = localStorage.getItem("token")
+    const auth = {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    }
+    useEffect(() => {
+        if (isLogged) {
+            dispatch(getInfoRequest(userID))
+            getProducts()
+            getUsers()
+        }
+    }, [])
 
-    // userID > 0 && console.log(role)
+    const getProducts = () => {
+        return dispatch(getListRequest(auth))
+    }
+    const getUsers = () => {
+        return dispatch(getUsersRequest())
+    }
+
+
     return (
         <>
-            {role === '' && <Redirect to="/login" exact />}
+            {!isLogged && <Redirect to="/login" exact />}
             <p>Home</p>
+            {beerList?.length > 0 && (
+                <>
+                    <p>Total de produtos: {beerList?.length}</p>
+                    <p>Total de usuários: {internalUsers?.length}</p>
+                </>
+            )}
+            {isAdmin &&
+                <p>is admin</p>}
+            {isEditor &&
+                <p>is editor</p>}
         </>
     )
 }

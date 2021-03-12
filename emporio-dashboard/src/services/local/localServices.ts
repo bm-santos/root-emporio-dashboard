@@ -1,10 +1,14 @@
 import api from "./api";
 
 export const UserService = {
-    new: (request: any[]) => api.post('/register', request),
     login: (request: any[]) => api.post('/login', request),
-    getInfo: (id: any) => api.get(`/users/${id}`),
+    getUser: (id: any) => api.get(`/users/${id}`),
 
+    getList: () => api.get('/users?role=admin&role=editor'),
+
+    new: (request: any[]) => api.post('/register', request),
 }
 
-export default UserService
+export const ProductService = {
+    getList: (headers: any) => api.get('/beers', headers)
+}

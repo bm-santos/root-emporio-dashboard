@@ -1,21 +1,19 @@
 import { Reducer } from "redux";
 import { UserActions } from "./types";
 import { decodeToken } from "react-jwt"
-import { getInfoRequest } from "./actions";
-import { useDispatch } from "react-redux";
+
 const INITIAL_STATE: any = {
-    isUserLogged: false,
-    userID: 0,
-    role: null,
+    isLogged: false,
+    userID: '',
+    role: '',
     name: '',
-    email: ''
+    email: '',
+    internalUsers: []
 }
 
 const userReducer: Reducer = (state = INITIAL_STATE, action: any) => {
-    const id = state.userID
     switch (action.type) {
         case UserActions.POST_LOGIN_REQUEST:
-            console.log(action.payload)
             return {
                 ...state,
             }
@@ -23,23 +21,22 @@ const userReducer: Reducer = (state = INITIAL_STATE, action: any) => {
             localStorage.setItem("token", action.payload.data.accessToken)
             return {
                 ...state,
-                isUserLogged: true,
+                isLogged: true,
                 userID: decodeToken(action.payload.data.accessToken).sub
             }
         case UserActions.POST_LOGIN_FAILURE:
             return {
                 ...state,
-                isUserLogged: false
+                isLogged: false
             }
         case UserActions.GET_INFO_REQUEST:
             return {
                 ...state,
             }
         case UserActions.GET_INFO_SUCCESS:
-            console.log(action.payload)
             return {
                 ...state,
-                isUserLogged: true,
+                isLogged: true,
                 role: action.payload.data.role,
                 name: action.payload.data.name,
                 email: action.payload.data.email
@@ -47,7 +44,19 @@ const userReducer: Reducer = (state = INITIAL_STATE, action: any) => {
         case UserActions.GET_INFO_FAILURE:
             return {
                 ...state,
-                isUserLogged: false
+            }
+        case UserActions.GET_USERS_REQUEST:
+            return {
+                ...state,
+            }
+        case UserActions.GET_USERS_SUCCESS:
+            return {
+                ...state,
+                internalUsers: action.payload.data
+            }
+        case UserActions.GET_USERS_FAILURE:
+            return {
+                ...state,
             }
         default: return state
     }
