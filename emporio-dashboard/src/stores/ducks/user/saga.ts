@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 import { call, put } from "@redux-saga/core/effects";
 import { UserService } from "../../../services/local/localServices";
-import { getInfoFailure, getInfoSuccess, getUsersFailure, getUsersSuccess, postLoginFailure, postLoginSuccess } from "./actions";
+import { deleteUserFailure, deleteUserSuccess, getInfoFailure, getInfoSuccess, getUsersFailure, getUsersSuccess, newUserFailure, newUserSuccess, postLoginFailure, postLoginSuccess } from "./actions";
 
 export function* postLoginSaga(request: any) {
     try {
@@ -27,5 +27,23 @@ export function* getUsersSaga() {
         yield put(getUsersSuccess(response))
     } catch (err) {
         yield put(getUsersFailure())
+    }
+}
+
+export function* newUserSaga(data: any) {
+    try {
+        const response: AxiosResponse = yield call(UserService.new, data.payload)
+        yield put(newUserSuccess(response))
+    } catch (err) {
+        yield put(newUserFailure())
+    }
+}
+
+export function* deleteUserSaga(id: any) {
+    try {
+        const response: AxiosResponse = yield call(UserService.delete, id.payload)
+        yield put(deleteUserSuccess(response))
+    } catch (err) {
+        yield put(deleteUserFailure())
     }
 }

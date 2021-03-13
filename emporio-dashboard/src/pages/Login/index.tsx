@@ -24,10 +24,16 @@ export default function LoginPage() {
     return (
         <>
             <p>Login</p>
-            <label>Email</label>
-            <input type="email" placeholder="type your e-mail" ref={inputLogin} />
-            <label>Password</label>
-            <input type="password" placeholder="type your password" ref={inputPassword} />
+            <input
+                type="email"
+                aria-label="email"
+                placeholder="Digite seu e-mail"
+                ref={inputLogin} />
+            <input
+                type="password"
+                aria-label="password"
+                placeholder="Digite sua senha"
+                ref={inputPassword} />
             <button onClick={login} >Send</button>
             {isLogged && <Redirect to="/" exact />}
         </>

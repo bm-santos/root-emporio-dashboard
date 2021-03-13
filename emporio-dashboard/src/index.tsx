@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Routes from './routes';
 import { Provider } from 'react-redux';
 import store from './stores';
+import Container from './components/Container';
 
 
 ReactDOM.render(

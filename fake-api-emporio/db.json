@@ -68,11 +68,18 @@
       "image": "https://emporiodacerveja.vtexassets.com/arquivos/ids/175042-1200-auto?width=1200&height=auto&aspect=true"
     },
     {
-      "title": "Pack Cerveja Michelob Ultra Light Lager 355ml (6 unidades)",
-      "price": "R$ 29,94",
-      "description": "Michelob Ultra",
-      "image": "https://emporiodacerveja.vtexassets.com/arquivos/ids/179041-1200-auto?width=1200&height=auto&aspect=true",
+      "title": "dasd",
+      "price": "R$ 33",
+      "description": "sda",
+      "image": "asd",
       "id": 7
+    },
+    {
+      "title": "dasd",
+      "price": "R$ 33",
+      "description": "sda",
+      "image": "asd",
+      "id": 8
     }
   ]
 }
