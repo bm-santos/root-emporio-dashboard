@@ -15,13 +15,6 @@
       "id": 2
     },
     {
-      "email": "asd@dasd.com",
-      "password": "$2a$10$OHDuT6vkhes4XudAWJCSzuX7x4Fj9eUYM2ntu6QmO2lb26cisK3NS",
-      "name": "dsasd",
-      "role": "editor",
-      "id": 3
-    },
-    {
       "email": "bruno@pasodk.com",
       "password": "$2a$10$BEbzW1RCsJ1xQ4eG/Wni8O9SC3vr/XKnCnFbVRU.daW68wBBIQJVq",
       "name": "Bruno",

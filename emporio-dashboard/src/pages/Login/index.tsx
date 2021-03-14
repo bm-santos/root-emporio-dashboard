@@ -22,12 +22,12 @@ export default function LoginPage() {
     };
 
     return (
-        <div className="container-main">
+        <div >
             {isLogged && <Redirect to="/" exact />}
             <Container component="main" maxWidth="xs">
                 <div className={classes.paper}>
                     <div>
-                        <span><LogoShield /><LogoTextBox /></span>
+                        <span><LogoShield h="100" /><LogoTextBox h="100" /></span>
                         <hr />
                     </div>
                     <Typography component="h1" variant="h5">Acesso restrito | Ambev</Typography>

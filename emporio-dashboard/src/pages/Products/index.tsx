@@ -9,17 +9,17 @@ export default function ProductsPage() {
     const { beerList } = useSelector((state: any) => state.productReducer)
 
     return (
-        <div style={{ maxWidth: "95%", margin: "0 auto" }}>
+        <>
             {!isLogged
                 ? <Redirect to="/login" exact />
                 : <Content>
-                    <p style={{ marginLeft: "20px" }}>
-                        <strong>Produtos cadastrados</strong>: {beerList?.length}
-                    </p>
+                    <h2>
+                        Produtos cadastrados: {beerList?.length}
+                    </h2>
                     <NewProduct />
                     <ListProducts />
                 </Content>
             }
-        </div>
+        </>
     )
 }

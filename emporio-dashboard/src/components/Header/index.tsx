@@ -54,47 +54,18 @@ export default function Header() {
     return (
         <>
             {name !== undefined &&
-                <header>
-                    <div>
-                        <span><LogoShield /><LogoTextBox /></span>
+                <>
+                    <div className="logo">
+                        <span><LogoShield h="35" /><LogoTextBox h="35" /></span>
                     </div>
-                    <div>
-                        Olá, {name} ({email}) <span>{role}</span>
+                    <div className="user">
+                        Olá, <span><strong>{name}</strong></span> <span className={role}>{role}</span>
                     </div>
-                    <div>
-                        <button onClick={() => dispatch(logoutUser())}>Sair</button>
+                    <div className="logout">
+                        <button onClick={() => dispatch(logoutUser())}><span>Sair</span></button>
                     </div>
-                </header>
+                </>
             }
-            {/* <div className={classes.root}>
-                <CssBaseline />
-                <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
-                    <Toolbar className={classes.toolbar}>
-                        <IconButton
-                            edge="start"
-                            color="inherit"
-                            aria-label="open drawer"
-                            onClick={handleDrawerOpen}
-                            className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
-                        > */}
-            {/* <MenuIcon /> */}
-            {/* MenuIcon
-                    </IconButton>
-                        <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-                            <div>
-                                <span><LogoShield /><LogoTextBox /></span>
-                            </div>
-                        </Typography>
-                        <div>
-                            Olá, {name} ({email}) <span>{role}</span>
-                        </div>
-                        <div>
-                            <button onClick={() => dispatch(logoutUser())}>Sair</button>
-                        </div>
-                    </Toolbar>
-                </AppBar>
-            </div> */}
-
         </>
     )
 }

@@ -24,7 +24,7 @@ export default function ListUsers() {
                     <TableRow key={user.id}>
                         <TableCell align="center">{user.name}</TableCell>
                         <TableCell align="center">{user.email}</TableCell>
-                        <TableCell align="center">{user.role}</TableCell>
+                        <TableCell align="center"><span className={user.role}>{user.role}</span></TableCell>
                         <TableCell align="center">
                             <span onClick={() => setConfirmExclusion(!confirmExclusion)}>
                                 {!confirmExclusion
