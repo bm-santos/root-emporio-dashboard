@@ -5,6 +5,7 @@ import { LogoShield, LogoTextBox } from "../../components/Images/Logo"
 import { postLoginRequest } from "../../stores/ducks/user/actions"
 import { Button, TextField, Grid, Typography, Container } from '@material-ui/core';
 import { useLoginStyles } from "../../hooks/useLoginStyles"
+import { Helmet } from "react-helmet"
 
 export default function LoginPage() {
     const { isLogged } = useSelector((state: any) => state.userReducer)
@@ -23,6 +24,9 @@ export default function LoginPage() {
 
     return (
         <div >
+            <Helmet>
+                <title>Login - Dashboard Empório da Cerveja</title>
+            </Helmet>
             {isLogged && <Redirect to="/" exact />}
             <Container component="main" maxWidth="xs">
                 <div className={classes.paper}>

@@ -10,7 +10,7 @@ export default function ListUsers() {
 
     const dispatch = useDispatch()
     return (
-        <Table size="small">
+        <Table size="medium">
             <TableHead>
                 <TableRow>
                     <TableCell align="center"><strong>Nome</strong></TableCell>

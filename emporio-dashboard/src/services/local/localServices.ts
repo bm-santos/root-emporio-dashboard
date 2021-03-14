@@ -1,21 +1,14 @@
+import { ProductArray } from "../../stores/ducks/product/types";
 import api from "./api";
-
-const token = localStorage.getItem("token")
-
-const headers = {
-    headers: {
-        'Authorization': `Bearer ${token}`
-    }
-}
 
 export const UserService = {
     login: (request: any[]) => api.post('/login', request),
     getUser: (id: any) => api.get(`/users/${id}`),
 
-    getList: () => api.get('/users?role=admin&role=editor', headers),
+    getList: () => api.get('/users?role=admin&role=editor'),
 
-    new: (data: any[]) => api.post('/users', data, headers),
-    delete: (id: any) => api.delete(`/users/${id}`, headers),
+    new: (data: any[]) => api.post('/users', data),
+    delete: (id: any) => api.delete(`/users/${id}`),
 }
 
 export const ProductService = {
@@ -24,7 +17,7 @@ export const ProductService = {
             'Authorization': `Bearer ${localStorage.getItem("token")}`
         }
     }),
-    new: (data: any[]) => api.post('/beers', data, {
+    new: (data: ProductArray[]) => api.post('/beers', data, {
         headers: {
             'Authorization': `Bearer ${localStorage.getItem("token")}`
         }

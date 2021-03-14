@@ -1,15 +1,14 @@
 import { Reducer } from "redux";
-import { UserActions } from "./types";
+import { UserActions, UserState } from "./types";
 import { decodeToken } from "react-jwt"
 
-const INITIAL_STATE: any = {
+const INITIAL_STATE: UserState = {
     isLogged: false,
-    userID: '',
-    role: '',
+    userID: null,
     isAdmin: false,
     isEditor: false,
+    role: '',
     name: '',
-    email: '',
     internalUsers: [],
     deletedUserID: null
 }
@@ -43,26 +42,23 @@ const userReducer: Reducer = (state = INITIAL_STATE, action: any) => {
             return {
                 ...state,
                 isLogged: true,
-                role: action.payload.data.role,
                 isAdmin: admin,
                 isEditor: editor,
+                role: action.payload.data.role,
                 name: action.payload.data.name,
-                email: action.payload.data.email
             }
         case UserActions.GET_INFO_FAILURE:
-            return {
-                ...state,
-            }
-        case UserActions.GET_USERS_REQUEST:
-            return state
+            return { ...state, }
+        case UserActions.GET_LIST_REQUEST:
+            return { ...state, }
 
-        case UserActions.GET_USERS_SUCCESS:
+        case UserActions.GET_LIST_SUCCESS:
             return {
                 ...state,
                 internalUsers: action.payload.data
             }
-        case UserActions.GET_USERS_FAILURE:
-            return state
+        case UserActions.GET_LIST_FAILURE:
+            return { ...state, }
         case UserActions.LOGOUT:
             localStorage.clear()
             return {
@@ -70,11 +66,22 @@ const userReducer: Reducer = (state = INITIAL_STATE, action: any) => {
                 isLogged: false
             }
         case UserActions.NEW_REGISTER_REQUEST:
-            updatedInternalUsers.push(action.payload)
-            return {
-                ...state,
-                internalUsers: updatedInternalUsers
+            let updatedId = 0
+            if (updatedInternalUsers.length === 0) {
+                updatedId = 1
+            } else {
+                updatedId = updatedInternalUsers[updatedInternalUsers.length - 1].id + 1
             }
+
+            const request = {
+                name: action.payload.name,
+                email: action.payload.email,
+                password: action.payload.password,
+                role: action.payload.role,
+                id: updatedId
+            }
+            updatedInternalUsers.push(request)
+            return { ...state, }
         case UserActions.NEW_REGISTER_SUCCESS:
             return {
                 ...state,

@@ -1,14 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
 import Content from "../../components/Content";
 import { getListRequest } from "../../stores/ducks/product/actions";
 import { getInfoRequest, getUsersRequest } from "../../stores/ducks/user/actions";
+import { Helmet } from "react-helmet"
 
 export default function HomePage() {
-    const { userID, isLogged, internalUsers } = useSelector((state: any) => state.userReducer)
-    const { beerList } = useSelector((state: any) => state.productReducer)
+    const { userID, isLogged, internalUsers, isAdmin } = useSelector((state: any) => state.userReducer)
+    const { productList } = useSelector((state: any) => state.productReducer)
     const dispatch = useDispatch()
+    const [goToLink, setGoToLink] = useState<string>('')
 
     useEffect(() => {
         if (isLogged) {
@@ -24,14 +26,33 @@ export default function HomePage() {
 
     return (
         <>
+            <Helmet>
+                <title>Home - Dashboard Empório da Cerveja</title>
+            </Helmet>
             {!isLogged
                 ? <Redirect to="/login" exact />
-                : internalUsers.length > 0 && (
-                    <Content>
-                        <p>Total de produtos: {beerList?.length}</p>
-                        <p>Total de usuários: {internalUsers?.length}</p>
-                    </Content>
-                )}
+                : <Content>
+                    <div className="content-home">
+                        <div className="total-products"
+                            onClick={() => setGoToLink("products")}>
+                            {goToLink === "products" && <Redirect to="/products" exact />}
+                            <p>Produtos cadastrados</p>
+                            <span>{productList?.length}</span>
+                        </div>
+                        {isAdmin
+                            ? <div className="total-users" onClick={() => setGoToLink("users")}>
+                                {goToLink === "users" && <Redirect to="/users" exact />}
+                                <p>Usuários cadastrados</p>
+                                <span>{internalUsers?.length}</span>
+                            </div>
+                            : <div className="editor-view" id="editor">
+                                <p>Usuários cadastrados</p>
+                                <span>{internalUsers?.length}</span>
+                            </div>
+                        }
+                    </div>
+                </Content>
+            }
         </>
     )
 }

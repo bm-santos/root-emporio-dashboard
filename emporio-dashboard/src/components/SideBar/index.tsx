@@ -8,12 +8,15 @@ export default function SideBar() {
     return (
         <>
             {!isLogged && <Redirect to="/login" exact />}
-            <nav role="full-horizontal">
+            <nav role="full-horizontal" className="menu">
                 <ul >
                     <Link className="link-menu" to="/"><li>Home</li></Link>
-                    <hr />
+
+                </ul>
+                <ul>
                     <Link className="link-menu" to="/products"><li>Produtos</li></Link>
-                    <hr />
+                </ul>
+                <ul>
                     {
                         isAdmin && <Link className="link-menu" to="/users"><li>Usuários</li></Link>
                     }

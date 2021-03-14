@@ -60,13 +60,13 @@ export default function NewUser() {
                         <Button className={classes.button}
                             size="small"
                             variant="contained"
-                            color="primary"
-                            onClick={newUser} >Salvar
+                            onClick={show} > Cancelar
                             </Button>
                         <Button className={classes.button}
                             size="small"
                             variant="contained"
-                            onClick={show} > Cancelar
+                            color="primary"
+                            onClick={newUser} >Salvar
                             </Button>
                     </div>
                 </div>

@@ -1,61 +1,20 @@
-import clsx from 'clsx';
-import { AppBar, CssBaseline, IconButton, Toolbar, Typography } from "@material-ui/core"
 import { useDispatch, useSelector } from "react-redux"
-import { useDashboardStyles } from "../../hooks/useDashboardStyles"
 import { logoutUser } from "../../stores/ducks/user/actions"
 import { LogoShield, LogoTextBox } from "../Images/Logo"
 import { useState } from 'react';
+import { Redirect } from 'react-router';
 
 export default function Header() {
-    const { role, email, name } = useSelector((action: any) => action.userReducer)
+    const { role, name } = useSelector((action: any) => action.userReducer)
+    const [goHome, setGoHome] = useState(false);
     const dispatch = useDispatch()
-    const classes = useDashboardStyles()
-    const [open, setOpen] = useState(false);
 
-    const [isHomeClicked, setIsHomeClicked] = useState(true);
-    const [isCurrencyClicked, setIsCurrencyClicked] = useState(false);
-    const [isFinanceClicked, setIsFinanceClicked] = useState(false);
-    const [isLoggedOut, setIsLoggedOut] = useState(false);
-    const [openConfirmation, setOpenConfirmation] = useState(false);
-
-    function clicouHome() {
-        setIsHomeClicked(true)
-        setIsCurrencyClicked(false)
-        setIsFinanceClicked(false)
-    }
-
-    function clicouCurrency() {
-        setIsHomeClicked(false)
-        setIsCurrencyClicked(true)
-        setIsFinanceClicked(false)
-    }
-
-    function clicouFinance() {
-        setIsHomeClicked(false)
-        setIsCurrencyClicked(false)
-        setIsFinanceClicked(true)
-    }
-
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
-    const handleDrawerClose = () => {
-        setOpen(false);
-    };
-    const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-
-    const handleClickOpen = () => {
-        setOpenConfirmation(true);
-    };
-
-    const handleClose = () => {
-        setOpenConfirmation(false);
-    };
     return (
         <>
             {name !== undefined &&
                 <>
-                    <div className="logo">
+                    {goHome && <Redirect to="/" exact />}
+                    <div className="logo" onClick={() => setGoHome(true)}>
                         <span><LogoShield h="35" /><LogoTextBox h="35" /></span>
                     </div>
                     <div className="user">
@@ -64,8 +23,7 @@ export default function Header() {
                     <div className="logout">
                         <button onClick={() => dispatch(logoutUser())}><span>Sair</span></button>
                     </div>
-                </>
-            }
+                </>}
         </>
     )
 }

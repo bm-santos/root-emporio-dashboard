@@ -68,18 +68,25 @@
       "image": "https://emporiodacerveja.vtexassets.com/arquivos/ids/175042-1200-auto?width=1200&height=auto&aspect=true"
     },
     {
-      "title": "dasd",
-      "price": "R$ 33",
-      "description": "sda",
-      "image": "asd",
+      "title": "Pack Cerveja Michelob Ultra Light Lager 355ml (6 unidades)",
+      "price": "R$ 29,94",
+      "description": "Michelob Ultra",
+      "image": "https://emporiodacerveja.vtexassets.com/arquivos/ids/179041-1200-auto?width=1200&height=auto&aspect=true",
       "id": 7
     },
-    {
-      "title": "dasd",
-      "price": "R$ 33",
-      "description": "sda",
-      "image": "asd",
+   {
+      "title": "Brazilian Skol",
+      "description": "Skol",
+      "price": "R$ 3,66",
+      "image": "https://trimais.vteximg.com.br/arquivos/ids/1019507-1000-1000/foto_original.jpg?v=637479702247800000",
       "id": 8
+    },
+    {
+      "title": "Brazilian Brahma",
+      "description": "Brahma",
+      "price": "R$ 4,33",
+      "image": "https://www.imigrantesbebidas.com.br/bebida/images/products/full/131-cerveja-brahma-lata-350ml.jpg",
+      "id": 9
     }
   ]
 }

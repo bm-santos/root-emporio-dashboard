@@ -3,6 +3,7 @@ import { Redirect } from "react-router"
 import Content from "../../components/Content"
 import ListProducts from "../../components/Products/ListProducts"
 import NewProduct from "../../components/Products/NewProduct"
+import { Helmet } from "react-helmet"
 
 export default function ProductsPage() {
     const { isLogged } = useSelector((state: any) => state.userReducer)
@@ -10,6 +11,9 @@ export default function ProductsPage() {
 
     return (
         <>
+            <Helmet>
+                <title>Produtos - Dashboard Empório da Cerveja</title>
+            </Helmet>
             {!isLogged
                 ? <Redirect to="/login" exact />
                 : <Content>

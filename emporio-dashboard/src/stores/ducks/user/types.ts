@@ -1,3 +1,5 @@
+import { ProductArray } from "../product/types";
+
 export enum UserActions {
     POST_LOGIN_REQUEST = '@user/POST_LOGIN_REQUEST',
     POST_LOGIN_SUCCESS = '@user/POST_LOGIN_SUCCESS',
@@ -7,9 +9,9 @@ export enum UserActions {
     GET_INFO_SUCCESS = '@user/GET_INFO_SUCCESS',
     GET_INFO_FAILURE = '@user/GET_INFO_FAILURE',
 
-    GET_USERS_REQUEST = '@user/GET_USERS_REQUEST',
-    GET_USERS_SUCCESS = '@user/GET_USERS_SUCCESS',
-    GET_USERS_FAILURE = '@user/GET_USERS_FAILURE',
+    GET_LIST_REQUEST = '@users/GET_LIST_REQUEST',
+    GET_LIST_SUCCESS = '@users/GET_LIST_SUCCESS',
+    GET_LIST_FAILURE = '@users/GET_LIST_FAILURE',
 
     NEW_REGISTER_REQUEST = '@user/NEW_REGISTER_REQUEST',
     NEW_REGISTER_SUCCESS = '@user/NEW_REGISTER_SUCCESS',
@@ -19,10 +21,23 @@ export enum UserActions {
     DELETE_USER_SUCCESS = '@user/DELETE_USER_SUCCESS',
     DELETE_USER_FAILURE = '@user/DELETE_USER_FAILURE',
 
-    LOGOUT = '@user/LOGOUT',
+    LOGOUT = '@LOGOUT',
 }
 
-export interface UserCredentials {
+export interface UserArray {
     email: string,
-    password: string
+    password: string,
+    role: string,
+
+}
+
+export interface UserState {
+    isLogged: boolean,
+    userID: number | null,
+    isAdmin: boolean,
+    isEditor: boolean,
+    role: string,
+    name: string,
+    internalUsers: ProductArray[],
+    deletedUserID: number | null
 }

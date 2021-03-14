@@ -6,7 +6,7 @@ import { useState } from "react"
 
 export const ListProducts = () => {
     const { isLogged, isAdmin } = useSelector((state: any) => state.userReducer)
-    const { beerList } = useSelector((state: any) => state.productReducer)
+    const { productList } = useSelector((state: any) => state.productReducer)
     const [confirmExclusion, setConfirmExclusion] = useState<boolean>(false)
     const dispatch = useDispatch()
 
@@ -14,7 +14,7 @@ export const ListProducts = () => {
         <Table size="small">
             <TableHead>
                 <TableRow>
-                    <TableCell align="center"><strong></strong></TableCell>
+                    <TableCell align="center"><strong>Foto do produto</strong></TableCell>
                     <TableCell align="center"><strong>Título</strong></TableCell>
                     <TableCell align="center"><strong>Descrição</strong></TableCell>
                     <TableCell align="center"><strong>Preço</strong></TableCell>
@@ -24,7 +24,7 @@ export const ListProducts = () => {
                 </TableRow>
             </TableHead>
             <TableBody>
-                {isLogged && beerList?.slice(0).reverse().map((beer: any) => (
+                {isLogged && productList?.slice(0).reverse().map((beer: any) => (
                     <TableRow key={beer.id}>
                         <TableCell align="center">
                             <img style={{ maxHeight: "50px" }} src={beer.image} alt={beer.description} />

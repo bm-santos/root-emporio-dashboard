@@ -1,19 +1,17 @@
+import { ThemeProvider, CssBaseline } from '@material-ui/core'
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './routes';
-import { ThemeProvider } from '@material-ui/core/styles'
-import { CssBaseline } from '@material-ui/core'
+import { Toaster } from 'react-hot-toast';
 import theme from './styles'
 
-function App() {
+export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
+        <Toaster />
         <Routes />
       </BrowserRouter>
     </ThemeProvider>
-
   );
 }
-
-export default App;

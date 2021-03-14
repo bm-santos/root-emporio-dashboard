@@ -1,7 +1,11 @@
 import { call, put } from "@redux-saga/core/effects";
 import { AxiosResponse } from "axios";
 import { ProductService } from "../../../services/local/localServices";
-import { deleteProductFailure, deleteProductSuccess, getListFailure, getListSuccess, newProductFailure, newProductSuccess } from "./actions";
+import {
+    getListSuccess, getListFailure,
+    newProductSuccess, newProductFailure,
+    deleteProductSuccess, deleteProductFailure
+} from "./actions";
 
 export function* getListSaga() {
     try {

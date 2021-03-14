@@ -9,7 +9,7 @@ export default function* rootSaga(): any {
     return yield all([
         takeLatest(UserActions.POST_LOGIN_REQUEST, postLoginSaga),
         takeLatest(UserActions.GET_INFO_REQUEST, getInfoSaga),
-        takeLatest(UserActions.GET_USERS_REQUEST, getUsersSaga),
+        takeLatest(UserActions.GET_LIST_REQUEST, getUsersSaga),
         takeLatest(UserActions.NEW_REGISTER_REQUEST, newUserSaga),
         takeLatest(UserActions.DELETE_USER_REQUEST, deleteUserSaga),
 
