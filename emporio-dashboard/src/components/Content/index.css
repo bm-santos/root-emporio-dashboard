@@ -1,0 +1,30 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+div .container-main {
+  background-color: red;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 5fr;
+      grid-template-columns: 1fr 5fr;
+  -ms-grid-rows: 1fr 4fr;
+      grid-template-rows: 1fr 4fr;
+}
+
+div .container-main .container-header {
+  background-color: magenta;
+}
+
+div .container-main .container-sidebar {
+  background-color: green;
+}
+
+div .container-main .container-content {
+  background-color: yellow;
+}
+/*# sourceMappingURL=index.css.map */

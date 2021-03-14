@@ -1,7 +1,6 @@
 import { Reducer } from "redux";
 import { UserActions } from "./types";
 import { decodeToken } from "react-jwt"
-import { useState } from "react";
 
 const INITIAL_STATE: any = {
     isLogged: false,
@@ -41,7 +40,6 @@ const userReducer: Reducer = (state = INITIAL_STATE, action: any) => {
         case UserActions.GET_INFO_SUCCESS:
             action.payload.data.role === "admin" ? admin = true : admin = false;
             action.payload.data.role === "editor" ? editor = true : editor = false;
-
             return {
                 ...state,
                 isLogged: true,
@@ -100,7 +98,7 @@ const userReducer: Reducer = (state = INITIAL_STATE, action: any) => {
                 internalUsers: updatedInternalUsers
             }
         case UserActions.DELETE_USER_FAILURE:
-            return state
+            return { ...state }
         default: return state
     }
 }

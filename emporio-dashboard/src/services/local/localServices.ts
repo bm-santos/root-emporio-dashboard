@@ -19,7 +19,19 @@ export const UserService = {
 }
 
 export const ProductService = {
-    getList: () => api.get('/beers', headers),
-    new: (data: any[]) => api.post('/beers', data, headers),
-    delete: (id: any) => api.delete(`/beers/${id}`, headers),
+    getList: () => api.get('/beers', {
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem("token")}`
+        }
+    }),
+    new: (data: any[]) => api.post('/beers', data, {
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem("token")}`
+        }
+    }),
+    delete: (id: any) => api.delete(`/beers/${id}`, {
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem("token")}`
+        }
+    }),
 }

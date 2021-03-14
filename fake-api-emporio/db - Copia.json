@@ -13,27 +13,6 @@
       "name": "Maricio",
       "role": "editor",
       "id": 2
-    },
-    {
-      "email": "asd@dasd.com",
-      "password": "$2a$10$OHDuT6vkhes4XudAWJCSzuX7x4Fj9eUYM2ntu6QmO2lb26cisK3NS",
-      "name": "dsasd",
-      "role": "editor",
-      "id": 3
-    },
-    {
-      "email": "bruno@pasodk.com",
-      "password": "$2a$10$BEbzW1RCsJ1xQ4eG/Wni8O9SC3vr/XKnCnFbVRU.daW68wBBIQJVq",
-      "name": "Bruno",
-      "role": "admin",
-      "id": 4
-    },
-    {
-      "email": "joao@joao.com",
-      "password": "$2a$10$cRBhqc7/NqbGjR/4HCOAt.u21nqElAiGWpYXD6pMl7bijxCEMV9UG",
-      "name": "Joao",
-      "role": "admin",
-      "id": 5
     }
   ],
   "register": [],
@@ -82,18 +61,25 @@
       "image": "https://emporiodacerveja.vtexassets.com/arquivos/ids/178530-1200-auto?width=1200&height=auto&aspect=true"
     },
     {
-      "title": "Brazilian Skol",
-      "description": "Skol",
-      "price": "3.66",
-      "image": "https://trimais.vteximg.com.br/arquivos/ids/1019507-1000-1000/foto_original.jpg?v=637479702247800000",
-      "id": 8
+      "id": 6,
+      "title": "Cerveja Erdinger Tradicional Weiss 500ml",
+      "price": "R$ 16,90",
+      "description": "Erdinger",
+      "image": "https://emporiodacerveja.vtexassets.com/arquivos/ids/175042-1200-auto?width=1200&height=auto&aspect=true"
     },
     {
-      "title": "Brazilian Brahma",
-      "description": "Brahma",
-      "price": "4.33",
-      "image": "https://www.imigrantesbebidas.com.br/bebida/images/products/full/131-cerveja-brahma-lata-350ml.jpg",
-      "id": 9
+      "title": "dasd",
+      "price": "R$ 33",
+      "description": "sda",
+      "image": "asd",
+      "id": 7
+    },
+    {
+      "title": "dasd",
+      "price": "R$ 33",
+      "description": "sda",
+      "image": "asd",
+      "id": 8
     }
   ]
 }

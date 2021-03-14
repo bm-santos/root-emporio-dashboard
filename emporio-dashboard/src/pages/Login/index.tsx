@@ -1,41 +1,65 @@
-import { useEffect, useRef, useState } from "react"
-import { useForm } from "react-hook-form"
+import { useRef } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Redirect } from "react-router"
-import { getInfoRequest, postLoginRequest } from "../../stores/ducks/user/actions"
+import { LogoShield, LogoTextBox } from "../../components/Images/Logo"
+import { postLoginRequest } from "../../stores/ducks/user/actions"
+import { Button, TextField, Grid, Typography, Container } from '@material-ui/core';
+import { useLoginStyles } from "../../hooks/useLoginStyles"
 
 export default function LoginPage() {
-
+    const { isLogged } = useSelector((state: any) => state.userReducer)
     const inputLogin = useRef<HTMLInputElement>(null)
     const inputPassword = useRef<HTMLInputElement>(null)
     const dispatch = useDispatch()
-    const [getUser, setGetUser] = useState<boolean>(false)
-    const { userID, role, isLogged } = useSelector((state: any) => state.userReducer)
+    const classes = useLoginStyles();
 
     const login = () => {
         const requisicao = {
             email: inputLogin?.current?.value,
             password: inputPassword?.current?.value
         }
-        setGetUser(true)
         return dispatch(postLoginRequest(requisicao))
     };
 
     return (
-        <>
-            <p>Login</p>
-            <input
-                type="email"
-                aria-label="email"
-                placeholder="Digite seu e-mail"
-                ref={inputLogin} />
-            <input
-                type="password"
-                aria-label="password"
-                placeholder="Digite sua senha"
-                ref={inputPassword} />
-            <button onClick={login} >Send</button>
+        <div className="container-main">
             {isLogged && <Redirect to="/" exact />}
-        </>
+            <Container component="main" maxWidth="xs">
+                <div className={classes.paper}>
+                    <div>
+                        <span><LogoShield /><LogoTextBox /></span>
+                        <hr />
+                    </div>
+                    <Typography component="h1" variant="h5">Acesso restrito | Ambev</Typography>
+                    <form className={classes.form} noValidate>
+                        <Grid container spacing={2}>
+                            <Grid item xs={12}>
+                                <label hidden aria-hidden="false">Digite seu e-mail</label>
+                                <TextField
+                                    margin="normal"
+                                    required fullWidth
+                                    type="email" label="Seu e-mail"
+                                    inputRef={inputLogin} autoFocus />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <label hidden aria-hidden="false">Digite sua senha</label>
+                                <TextField
+                                    margin="normal"
+                                    required fullWidth
+                                    type="password" label="Sua senha"
+                                    inputRef={inputPassword} />
+                            </Grid>
+                        </Grid>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            onClick={login}
+                            className={classes.submit}>
+                            Entrar
+                        </Button>
+                    </form>
+                </div>
+            </Container>
+        </div >
     )
 }

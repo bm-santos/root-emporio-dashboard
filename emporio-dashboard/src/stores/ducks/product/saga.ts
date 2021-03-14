@@ -7,10 +7,8 @@ export function* getListSaga() {
     try {
         const response: AxiosResponse = yield call(ProductService.getList)
         yield put(getListSuccess(response))
-        console.log(response)
     } catch (err) {
         yield put(getListFailure())
-        console.log(err)
     }
 }
 

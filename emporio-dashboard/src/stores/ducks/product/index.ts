@@ -12,18 +12,15 @@ const productReducer: Reducer = (state = INITIAL_STATE, action: any) => {
     let deletedBeerID = state.deletedBeerID
     switch (action.type) {
         case ProductActions.GET_LIST_REQUEST:
-            console.log(action.payload)
             return {
                 ...state,
             }
         case ProductActions.GET_LIST_SUCCESS:
-            console.log(action.payload)
             return {
                 ...state,
                 beerList: action.payload.data
             }
         case ProductActions.GET_LIST_FAILURE:
-            console.log(action.payload)
             return {
                 ...state,
                 retry: true
