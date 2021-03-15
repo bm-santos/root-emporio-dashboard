@@ -10,13 +10,13 @@ export default function ListUsers() {
 
     const dispatch = useDispatch()
     return (
-        <Table size="medium">
+        <Table className="table" size="small" stickyHeader >
             <TableHead>
-                <TableRow>
-                    <TableCell align="center"><strong>Nome</strong></TableCell>
-                    <TableCell align="center"><strong>E-mail</strong></TableCell>
-                    <TableCell align="center"><strong>Permissão</strong></TableCell>
-                    <TableCell align="center"><strong>Excluir</strong></TableCell>
+                <TableRow id="table-head" >
+                    <TableCell align="center"><span>Nome</span></TableCell>
+                    <TableCell align="center"><span>E-mail</span></TableCell>
+                    <TableCell align="center"><span>Permissão</span></TableCell>
+                    <TableCell align="center"><span>Excluir</span></TableCell>
                 </TableRow>
             </TableHead>
             <TableBody>
@@ -26,18 +26,20 @@ export default function ListUsers() {
                         <TableCell align="center">{user.email}</TableCell>
                         <TableCell align="center"><span className={user.role}>{user.role}</span></TableCell>
                         <TableCell align="center">
-                            <span onClick={() => setConfirmExclusion(!confirmExclusion)}>
+                            <div>
                                 {!confirmExclusion
-                                    ? <span onClick={() => setConfirmExclusion(!confirmExclusion)} ><BinIcon /></span>
+                                    ? <button onClick={() => setConfirmExclusion(!confirmExclusion)} ><BinIcon /></button>
                                     : <>
-                                        <span onClick={() => dispatch(deleteUserRequest(user.id))}><strong>Sim</strong> </span>
-                                        <span onClick={() => setConfirmExclusion(!confirmExclusion)}> Não </span>
+                                        <button id="btn-keep" onClick={() => setConfirmExclusion(!confirmExclusion)}> Não </button>
+                                        <button id="btn-delete" onClick={() => dispatch(deleteUserRequest(user.id))} >Sim</button>
                                     </>
-                                }</span>
+                                }
+                            </div>
                         </TableCell>
                     </TableRow>
-                ))}
-            </TableBody>
-        </Table>
+                ))
+                }
+            </TableBody >
+        </Table >
     )
 }

@@ -19,8 +19,10 @@ export default function UsersPage() {
                     <h2>
                         Usuários cadastrados: {internalUsers.length}
                     </h2>
-                    <NewUser />
-                    <ListUsers />
+                    <div className="container-users">
+                        <NewUser />
+                        <ListUsers />
+                    </div>
                 </Content>
             }
         </>

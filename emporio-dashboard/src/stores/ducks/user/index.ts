@@ -88,7 +88,12 @@ const userReducer: Reducer = (state = INITIAL_STATE, action: any) => {
                 internalUsers: updatedInternalUsers
             }
         case UserActions.NEW_REGISTER_FAILURE:
-            return state
+            updatedInternalUsers.pop()
+
+            return {
+                ...state,
+                internalUsers: updatedInternalUsers
+            }
         case UserActions.DELETE_USER_REQUEST:
             deletedUserID = action.payload
             return {
@@ -96,6 +101,11 @@ const userReducer: Reducer = (state = INITIAL_STATE, action: any) => {
                 deletedUserID: deletedUserID
             }
         case UserActions.DELETE_USER_SUCCESS:
+            return {
+                ...state,
+                internalUsers: updatedInternalUsers
+            }
+        case UserActions.DELETE_USER_FAILURE:
             for (let i = 0; i < updatedInternalUsers.length; i++)
                 if (updatedInternalUsers[i].id === deletedUserID)
                     updatedInternalUsers.splice(i, 1)
@@ -104,8 +114,6 @@ const userReducer: Reducer = (state = INITIAL_STATE, action: any) => {
                 ...state,
                 internalUsers: updatedInternalUsers
             }
-        case UserActions.DELETE_USER_FAILURE:
-            return { ...state }
         default: return state
     }
 }

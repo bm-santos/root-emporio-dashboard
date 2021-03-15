@@ -11,15 +11,15 @@ export const ListProducts = () => {
     const dispatch = useDispatch()
 
     return (
-        <Table size="small">
-            <TableHead>
-                <TableRow>
-                    <TableCell align="center"><strong>Foto do produto</strong></TableCell>
-                    <TableCell align="center"><strong>Título</strong></TableCell>
-                    <TableCell align="center"><strong>Descrição</strong></TableCell>
-                    <TableCell align="center"><strong>Preço</strong></TableCell>
+        <Table className="table" size="small" stickyHeader >
+            <TableHead >
+                <TableRow id="table-head" >
+                    <TableCell align="center"><span>Foto do produto</span></TableCell>
+                    <TableCell align="center"><span>Título</span></TableCell>
+                    <TableCell align="center"><span>Descrição</span></TableCell>
+                    <TableCell align="center"><span>Preço</span></TableCell>
                     {isAdmin &&
-                        <TableCell hidden align="center"><strong>Excluir</strong></TableCell>
+                        <TableCell hidden align="center"><span>Excluir</span></TableCell>
                     }
                 </TableRow>
             </TableHead>
@@ -33,15 +33,16 @@ export const ListProducts = () => {
                         <TableCell align="center">{beer.title}</TableCell>
                         <TableCell align="center">{beer.price}</TableCell>
                         {isAdmin &&
-                            <TableCell key={beer.id} align="center">
-                                <span onClick={() => setConfirmExclusion(!confirmExclusion)}>
+                            <TableCell align="center">
+                                <div>
                                     {!confirmExclusion
-                                        ? <span onClick={() => setConfirmExclusion(!confirmExclusion)} ><BinIcon /></span>
+                                        ? <button onClick={() => setConfirmExclusion(!confirmExclusion)} ><BinIcon /></button>
                                         : <>
-                                            <span onClick={() => dispatch(deleteProductRequest(beer.id))}> <strong>Sim</strong> </span>
-                                            <span onClick={() => setConfirmExclusion(!confirmExclusion)}> Não </span>
+                                            <button id="btn-keep" onClick={() => setConfirmExclusion(!confirmExclusion)}> Não </button>
+                                            <button id="btn-delete" onClick={() => dispatch(deleteProductRequest(beer.id))}>Sim</button>
                                         </>
-                                    }</span>
+                                    }
+                                </div>
                             </TableCell>
                         }
                     </TableRow>

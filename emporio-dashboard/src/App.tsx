@@ -9,7 +9,21 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
-        <Toaster />
+        <Toaster
+          toastOptions={{
+            success: {
+              style: {
+                background: 'green',
+                color: 'white'
+              },
+            },
+            error: {
+              style: {
+                background: 'red',
+                color: 'white'
+              },
+            },
+          }} />
         <Routes />
       </BrowserRouter>
     </ThemeProvider>

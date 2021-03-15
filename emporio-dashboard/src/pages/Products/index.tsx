@@ -7,10 +7,10 @@ import { Helmet } from "react-helmet"
 
 export default function ProductsPage() {
     const { isLogged } = useSelector((state: any) => state.userReducer)
-    const { beerList } = useSelector((state: any) => state.productReducer)
+    const { productList } = useSelector((state: any) => state.productReducer)
 
     return (
-        <>
+        <div className="container-products">
             <Helmet>
                 <title>Produtos - Dashboard Empório da Cerveja</title>
             </Helmet>
@@ -18,12 +18,12 @@ export default function ProductsPage() {
                 ? <Redirect to="/login" exact />
                 : <Content>
                     <h2>
-                        Produtos cadastrados: {beerList?.length}
+                        Produtos cadastrados: {productList?.length}
                     </h2>
                     <NewProduct />
                     <ListProducts />
                 </Content>
             }
-        </>
+        </div>
     )
 }

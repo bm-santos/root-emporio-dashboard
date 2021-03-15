@@ -1,85 +1,85 @@
-import { Button, FormControlLabel, Radio, RadioGroup, TextField } from "@material-ui/core";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useFormStyles } from "../../../hooks/useFormStyles"
+import { useForm } from "react-hook-form"
 import { newUserRequest } from "../../../stores/ducks/user/actions";
+import { UserArray } from "../../../stores/ducks/user/types";
 
 export default function NewUser() {
-    const inputName = useRef<HTMLInputElement>(null)
-    const inputEmail = useRef<HTMLInputElement>(null)
-    const inputPassword = useRef<HTMLInputElement>(null)
-    const [showSection, setShowSection] = useState<boolean>(false)
-    const [roleType, setRoleType] = useState<string>('')
-
+    const [showRegisterSection, setShowRegisterSection] = useState<boolean>(false)
+    const { register, handleSubmit } = useForm();
     const dispatch = useDispatch()
 
-    const classes = useFormStyles()
-
-    const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setRoleType((event.target as HTMLInputElement).value);
-    };
     const show = () => {
-        setShowSection(!showSection)
+        setShowRegisterSection(!showRegisterSection)
     }
-    const newUser = () => {
+
+    const onSubmit = async (data: UserArray) => {
         const request = {
-            name: inputName.current?.value,
-            email: inputEmail.current?.value,
-            password: inputPassword.current?.value,
-            role: roleType
+            name: data.name,
+            email: data.email,
+            password: data.password,
+            role: data.role
         }
         return dispatch(newUserRequest(request))
     }
     return (
-        <div>
-            {showSection
-                ? <div className={classes.form}>
-                    <div>
-                        <TextField
-                            aria-label="Nome"
-                            placeholder="Nome"
-                            type="name"
-                            inputRef={inputName} />
-                        <TextField
-                            aria-label="Email"
-                            placeholder="E-mail"
-                            type="email"
-                            inputRef={inputEmail} />
-                        <TextField
-                            aria-label="Senha"
-                            placeholder="Senha"
-                            type="password"
-                            inputRef={inputPassword} />
-                        <RadioGroup aria-label="Role" name="role" value={roleType} onChange={handleRadioChange}>
-                            <span>
-                                <FormControlLabel value="admin" control={<Radio />} label="Admin" />
-                                <FormControlLabel value="editor" control={<Radio />} label="Editor" /></span>
-                        </RadioGroup>
-                    </div>
-                    <div>
-                        <Button className={classes.button}
-                            size="small"
-                            variant="contained"
-                            onClick={show} > Cancelar
-                            </Button>
-                        <Button className={classes.button}
-                            size="small"
-                            variant="contained"
-                            color="primary"
-                            onClick={newUser} >Salvar
-                            </Button>
-                    </div>
-                </div>
-                : <div>
-                    <Button className={classes.button}
-                        variant="contained"
-                        size="small"
-                        color="primary"
-                        onClick={show}>
+        <>
+            {!showRegisterSection
+                ?
+                <div>
+                    <button id="btn-register" onClick={show}>
                         <span>Cadastrar</span>
-                    </Button>
+                    </button>
                 </div>
-            }
-        </div>
+                :
+                <div>
+                    <form className="form-section" onSubmit={handleSubmit(onSubmit)}>
+                        <div className="form-labels">
+                            <div>
+                                <label>Nome <input
+                                    name="name"
+                                    type="text"
+                                    required
+                                    ref={register} /></label>
+                            </div>
+                            <div>
+                                <label>E-mail<input
+                                    name="email"
+                                    type="email"
+                                    required
+                                    ref={register} /> </label>
+                            </div>
+                            <div>
+                                <label>Senha<input
+                                    name="password"
+                                    type="password"
+                                    required
+                                    pattern="[a-z0-9]{5,9}"
+                                    title="Sua senha deve conter no mínimo 5 caracteres"
+                                    placeholder="Digite sua senha"
+                                    ref={register} /> </label>
+                            </div>
+                            <div>
+                                <label><strong>Permissão:</strong></label><br />
+                                <label id="radio-option"><input
+                                    type="radio"
+                                    name="role"
+                                    value="admin"
+                                    ref={register} /> Administrador </label><br />
+                                <label id="radio-option"><input
+                                    type="radio"
+                                    name="role"
+                                    value="editor"
+                                    checked
+                                    ref={register} /> Editor</label>
+                            </div>
+                        </div>
+                        <div className="form-buttons">
+                            <button id="btn-cancel" onClick={show}>Cancelar</button>
+                            <button id="btn-confirm" type="submit">Salvar</button>
+                        </div>
+                    </form>
+                </div>}
+        </>
     )
 }

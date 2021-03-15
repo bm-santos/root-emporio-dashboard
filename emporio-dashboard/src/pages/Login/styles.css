@@ -1,0 +1,116 @@
+div.bg {
+  background-image: url(/src/components/Images/bg-beers.svg);
+  background-color: white;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  padding-top: 100px;
+}
+
+.container-login {
+  background-color: #eee;
+  width: 440px;
+  display: -ms-grid;
+  display: grid;
+  margin: 0 auto;
+  margin-top: 5px;
+  -webkit-box-shadow: 3px 3px 0 lightgray;
+          box-shadow: 3px 3px 0 lightgray;
+  border-radius: 20px;
+}
+
+.container-login h2 {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.container-login div#header-login {
+  padding: 20px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 70%;
+}
+
+.container-login div#header-login span {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.container-login form.form-section {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-top: 20px;
+  width: 70%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 2fr 1fr;
+      grid-template-rows: 2fr 1fr;
+  color: #585858;
+}
+
+.container-login form.form-section .form-labels {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 2fr 1fr 2fr;
+      grid-template-rows: 1fr 2fr 1fr 2fr;
+  -ms-grid-column-align: left;
+      justify-self: left;
+}
+
+.container-login form.form-section .form-labels label {
+  font-weight: bold;
+}
+
+.container-login form.form-section .form-labels input {
+  background-color: #d1d1d1;
+  border: 0;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  border-radius: 5px;
+  width: 180%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.container-login form.form-section #radio-option {
+  font-weight: 400;
+}
+
+.container-login form.form-section .form-buttons {
+  margin-inline: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-self: center;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.container-login form.form-section .form-buttons button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 140px;
+}
+
+.container-login form.form-section #btn-confirm {
+  border-radius: 10px;
+  border: 0;
+  margin: 10px;
+  font-weight: 600;
+  height: 40px;
+  font-size: medium;
+  background-color: #ffa935;
+  -webkit-box-shadow: 3px 3px 0 darkorange;
+          box-shadow: 3px 3px 0 darkorange;
+  color: #9b5500;
+}
+
+.container-login form.form-section #btn-confirm:hover {
+  background-color: #ffb85b;
+  -webkit-box-shadow: 3px 3px 0 #df9100;
+          box-shadow: 3px 3px 0 #df9100;
+  color: #5a3200;
+  cursor: pointer;
+}
+/*# sourceMappingURL=styles.css.map */

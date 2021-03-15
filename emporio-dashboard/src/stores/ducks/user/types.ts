@@ -1,5 +1,3 @@
-import { ProductArray } from "../product/types";
-
 export enum UserActions {
     POST_LOGIN_REQUEST = '@user/POST_LOGIN_REQUEST',
     POST_LOGIN_SUCCESS = '@user/POST_LOGIN_SUCCESS',
@@ -25,10 +23,14 @@ export enum UserActions {
 }
 
 export interface UserArray {
+    name: string,
     email: string,
     password: string,
     role: string,
-
+}
+export interface UserLogin {
+    email: string,
+    password: string,
 }
 
 export interface UserState {
@@ -38,6 +40,6 @@ export interface UserState {
     isEditor: boolean,
     role: string,
     name: string,
-    internalUsers: ProductArray[],
+    internalUsers: UserState[],
     deletedUserID: number | null
 }

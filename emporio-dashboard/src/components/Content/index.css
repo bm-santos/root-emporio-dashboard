@@ -2,7 +2,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-size: medium;
+  font-size: 18px;
+  font-family: "Lato", sans-serif !important;
 }
 
 div .container-main {
@@ -63,7 +64,7 @@ div .container-main header .logout {
 }
 
 div .container-main header .logout button {
-  background-color: #ccc;
+  background-color: #bebebe;
   color: darkslategray;
   border-radius: 10px;
   border: 0;
@@ -71,14 +72,15 @@ div .container-main header .logout button {
   padding-inline: 30px;
   font-weight: 600;
   height: 25px;
-  -webkit-box-shadow: 3px 3px 0 white;
-          box-shadow: 3px 3px 0 white;
+  -webkit-box-shadow: 3px 3px 0 darkslategray;
+          box-shadow: 3px 3px 0 darkslategray;
 }
 
 div .container-main header .logout button:hover {
-  background-color: #ffd271;
-  -webkit-box-shadow: 3px 3px 0 darkorange;
-          box-shadow: 3px 3px 0 darkorange;
+  background-color: darkslategray;
+  -webkit-box-shadow: 3px 3px 0 black;
+          box-shadow: 3px 3px 0 black;
+  color: white;
   cursor: pointer;
 }
 
@@ -107,10 +109,14 @@ div .container-main aside nav ul .link-menu {
   text-decoration: none;
 }
 
+div .container-main aside nav ul .link-menu span + span {
+  margin: 20px;
+}
+
 div .container-main aside nav ul li {
   text-align: center;
   line-height: 5vh;
-  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-family: "Lato", sans-serif;
   color: #777;
   font-weight: bold;
 }
@@ -168,6 +174,158 @@ div .container-main main .content-home #editor:hover {
   cursor: auto;
 }
 
+div .container-main main #table-head span {
+  font-weight: 900;
+  font-size: 16px;
+}
+
+div .container-main main #btn-register, div .container-main main #btn-cancel, div .container-main main #btn-confirm {
+  background-color: #5c71eb;
+  color: white;
+  -webkit-box-shadow: 3px 3px 0 #293b9e;
+          box-shadow: 3px 3px 0 #293b9e;
+  border-radius: 10px;
+  border: 0;
+  margin: 10px;
+  padding-inline: 30px;
+  font-weight: 600;
+  height: 50px;
+  font-size: medium;
+}
+
+div .container-main main #btn-register:hover, div .container-main main #btn-cancel:hover, div .container-main main #btn-confirm:hover {
+  background-color: #293b9e;
+  -webkit-box-shadow: 3px 3px 0 #0d1853;
+          box-shadow: 3px 3px 0 #0d1853;
+  cursor: pointer;
+}
+
+div .container-main main #btn-cancel, div .container-main main #btn-confirm {
+  background-color: #f34040;
+  color: darkred;
+  height: 35px;
+  -webkit-box-shadow: 3px 3px 0 #c50c0c;
+          box-shadow: 3px 3px 0 #c50c0c;
+  -ms-grid-column-align: right;
+      justify-self: right;
+}
+
+div .container-main main #btn-cancel:hover, div .container-main main #btn-confirm:hover {
+  background-color: #830707;
+  -webkit-box-shadow: 3px 3px 0 #380202;
+          box-shadow: 3px 3px 0 #380202;
+  color: white;
+}
+
+div .container-main main #btn-confirm {
+  background-color: #48c52f;
+  -webkit-box-shadow: 3px 3px 0 #338a21;
+          box-shadow: 3px 3px 0 #338a21;
+  color: darkgreen;
+  -ms-grid-column-align: left;
+      justify-self: left;
+}
+
+div .container-main main #btn-confirm:hover {
+  background-color: darkgreen;
+  -webkit-box-shadow: 3px 3px 0 #380202;
+          box-shadow: 3px 3px 0 #380202;
+  color: white;
+}
+
+div .container-main main .form-section {
+  max-width: 450px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 2fr 1fr;
+      grid-template-rows: 2fr 1fr;
+  overflow: hidden;
+  color: #585858;
+}
+
+div .container-main main .form-section .form-labels {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  margin-inline: 5px;
+}
+
+div .container-main main .form-section .form-labels label {
+  font-weight: bold;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  margin-inline: 20px;
+}
+
+div .container-main main .form-section .form-labels input {
+  background-color: #ebebeb;
+  border: 0;
+  margin-inline: 20px;
+  border-radius: 5px;
+  max-width: 170px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+div .container-main main .form-section #radio-option {
+  font-weight: 400;
+}
+
+div .container-main main .form-section .form-buttons {
+  margin-inline: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-self: center;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+div .container-main main .form-section .form-buttons button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 150px;
+}
+
+div .container-main main .table div {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+div .container-main main .table div button {
+  background-color: white;
+  border: 0;
+  border-radius: 5px;
+  padding: 5px;
+  margin-inline: 5px;
+}
+
+div .container-main main .table #btn-delete, div .container-main main .table #btn-keep {
+  background-color: #e23b3b;
+  border: 0;
+  color: white;
+}
+
+div .container-main main .table #btn-keep {
+  background-color: #5252e6;
+}
+
+div .container-main main .table #btn-delete:hover, div .container-main main .table #btn-keep:hover {
+  background: red;
+}
+
+div .container-main main .table #btn-keep:hover {
+  background: #25259c;
+}
+
 div .container-main footer {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
@@ -185,17 +343,19 @@ div .container-main footer a {
 }
 
 .admin {
-  background-color: red;
+  background-color: goldenrod;
   border-radius: 10px;
   padding-inline: 10px;
   color: white;
+  text-transform: capitalize;
 }
 
 .editor {
-  background-color: #e69500;
+  background-color: darkgrey;
   border-radius: 10px;
   padding-inline: 10px;
-  color: white;
+  color: #fff;
+  text-transform: capitalize;
 }
 
 @media only screen and (max-width: 660px) {
@@ -236,11 +396,8 @@ div .container-main footer a {
   }
   div .container-main aside nav ul .link-menu {
     text-decoration: none;
-    -webkit-text-decoration-style: dotted;
-            text-decoration-style: dotted;
   }
   div .container-main aside nav ul li {
-    font-family: "Lato", Helvetica, Arial, sans-serif;
     color: #777;
     font-weight: bold;
   }
