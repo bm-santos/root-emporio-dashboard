@@ -2,10 +2,10 @@
 
 ## Descrição
 Dashboard administrativo que permite gerenciar os produtos e usuários cadastrados. Nesta aplicação é possível:
-1. Listar, cadastrar e remover* usuários (Administrador / Editor)
+1. Listar, cadastrar e remover usuários (Administrador / Editor)
 2. Listar, cadastrar e remover produtos
 
-*Apenas administradores podem visualizar a página de usuários.
+*Apenas administradores podem visualizar a página de usuários e remover produtos.
 
 ## Demonstração
 ![](https://github.com/bm-santos/root-emporio-dashboard/blob/main/emporio-dashboard/src/assets/demo-web.gif?raw=true)!
