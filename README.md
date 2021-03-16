@@ -9,9 +9,11 @@ Dashboard administrativo que permite gerenciar os produtos e usuários cadastrad
 
 ## Demonstração
 ![](https://github.com/bm-santos/root-emporio-dashboard/blob/main/emporio-dashboard/src/assets/demo-web.gif?raw=true)
+
 > Layout Web
 
 ![](https://github.com/bm-santos/root-emporio-dashboard/blob/main/emporio-dashboard/src/assets/demo-mobile.gif?raw=true)
+
 > Layout Mobile
 
 ## Como usar este repositório
