@@ -8,13 +8,14 @@ Dashboard administrativo que permite gerenciar os produtos e usuários cadastrad
 *Apenas administradores podem visualizar a página de usuários e remover produtos.
 
 ## Demonstração
+
+> Layout Web - Usuário administrador
+ 
 ![](https://github.com/bm-santos/root-emporio-dashboard/blob/main/emporio-dashboard/src/assets/demo-web.gif?raw=true)
 
-> Layout Web
+> Layout Mobile - Usuário editor 
 
 ![](https://github.com/bm-santos/root-emporio-dashboard/blob/main/emporio-dashboard/src/assets/demo-mobile.gif?raw=true)
-
-> Layout Mobile
 
 ## Como usar este repositório
 
