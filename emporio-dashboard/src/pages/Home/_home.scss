@@ -1,0 +1,33 @@
+.content-home {
+    display: flex;
+    justify-content: start;
+    padding-top: 20px;
+    .total {
+        margin: 20px;
+        padding: 30px;
+        background-color: #ccc;
+        border-radius: 20px;
+        box-shadow: 3px 3px 0 darkslategray;
+        display: block;
+        text-align: center;
+        font-size: large;
+        span {
+            font-size: 40px;
+        }
+    }
+    div:hover {
+        background-color: rgb(255, 210, 113);
+        color: orangered;
+        box-shadow: 3px 3px 0 darkorange;
+        cursor: pointer;
+    }
+    .editor-view {
+        @extend .total;
+    }
+    .editor:hover {
+        background-color: #ccc;
+        box-shadow: 3px 3px 0 darkslategray;
+        color: black;
+        cursor: auto;
+    }
+}

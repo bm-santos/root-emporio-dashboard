@@ -1,3 +1,115 @@
+div.bg {
+  background-image: url(/src/components/Images/bg-beers.svg);
+  background-color: white;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  padding-top: 100px;
+}
+
+div.bg div.container-login {
+  background-color: #eee;
+  width: 440px;
+  display: -ms-grid;
+  display: grid;
+  margin: 0 auto;
+  margin-top: 5px;
+  -webkit-box-shadow: 3px 3px 0 lightgray;
+          box-shadow: 3px 3px 0 lightgray;
+  border-radius: 20px;
+}
+
+div.bg div.container-login h2 {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+div.bg div.container-login div.header-login-form {
+  padding: 20px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 70%;
+}
+
+div.bg div.container-login div.header-login-form span {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+div.bg div.container-login form.body-login-form {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-top: 20px;
+  width: 70%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 2fr 1fr;
+      grid-template-rows: 2fr 1fr;
+  color: #585858;
+}
+
+div.bg div.container-login form.body-login-form div.form-inputs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 2fr 1fr 2fr;
+      grid-template-rows: 1fr 2fr 1fr 2fr;
+  -ms-grid-column-align: left;
+      justify-self: left;
+}
+
+div.bg div.container-login form.body-login-form div.form-inputs label {
+  font-weight: bold;
+}
+
+div.bg div.container-login form.body-login-form div.form-inputs input {
+  background-color: #d1d1d1;
+  border: 0;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  border-radius: 5px;
+  width: 180%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+div.bg div.container-login form.body-login-form div.form-button {
+  margin-inline: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-self: center;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+div.bg div.container-login form.body-login-form div.form-button button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 140px;
+}
+
+div.bg div.container-login form.body-login-form button.btn-confirm {
+  border-radius: 10px;
+  border: 0;
+  margin: 10px;
+  font-weight: 600;
+  height: 40px;
+  font-size: medium;
+  background-color: #ffa935;
+  -webkit-box-shadow: 3px 3px 0 darkorange;
+          box-shadow: 3px 3px 0 darkorange;
+  color: #9b5500;
+}
+
+div.bg div.container-login form.body-login-form button.btn-confirm:hover {
+  background-color: #ffb85b;
+  -webkit-box-shadow: 3px 3px 0 #df9100;
+          box-shadow: 3px 3px 0 #df9100;
+  color: #5a3200;
+  cursor: pointer;
+}
+
 html,
 body {
   margin: 0;
@@ -6,7 +118,7 @@ body {
   font-family: "Lato", sans-serif !important;
 }
 
-div .container-main {
+div.container-main {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 8fr;
@@ -20,7 +132,7 @@ div .container-main {
   font-size: 0.9rem;
 }
 
-div .container-main header {
+div.container-main header {
   background-color: #f0f0f0;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -37,16 +149,16 @@ div .container-main header {
           align-items: center;
 }
 
-div .container-main header .logo {
+div.container-main header .logo {
   -ms-grid-column-align: center;
       justify-self: center;
 }
 
-div .container-main header .logo :hover {
+div.container-main header .logo :hover {
   cursor: pointer;
 }
 
-div .container-main header .user {
+div.container-main header .user {
   -ms-grid-column-align: right;
       justify-self: right;
   -ms-flex-item-align: center;
@@ -54,16 +166,16 @@ div .container-main header .user {
       align-self: center;
 }
 
-div .container-main header .user span + span {
+div.container-main header .user span + span {
   margin-left: 10px;
 }
 
-div .container-main header .logout {
+div.container-main header .logout {
   -ms-grid-column-align: center;
       justify-self: center;
 }
 
-div .container-main header .logout button {
+div.container-main header .logout button {
   background-color: #bebebe;
   color: darkslategray;
   border-radius: 10px;
@@ -76,7 +188,7 @@ div .container-main header .logout button {
           box-shadow: 3px 3px 0 darkslategray;
 }
 
-div .container-main header .logout button:hover {
+div.container-main header .logout button:hover {
   background-color: darkslategray;
   -webkit-box-shadow: 3px 3px 0 black;
           box-shadow: 3px 3px 0 black;
@@ -84,7 +196,7 @@ div .container-main header .logout button:hover {
   cursor: pointer;
 }
 
-div .container-main aside {
+div.container-main aside {
   background-color: #f0f0f0;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
@@ -94,26 +206,27 @@ div .container-main aside {
   border-bottom-left-radius: 30px;
 }
 
-div .container-main aside nav ul {
+div.container-main aside nav ul {
   margin-top: 0 auto;
   padding: 0 0;
   display: -ms-grid;
   display: grid;
+  list-style-type: none;
 }
 
-div .container-main aside nav ul li:hover {
+div.container-main aside nav ul li:hover {
   background-color: #bbb;
 }
 
-div .container-main aside nav ul .link-menu {
+div.container-main aside nav ul .link-menu {
   text-decoration: none;
 }
 
-div .container-main aside nav ul .link-menu span + span {
+div.container-main aside nav ul .link-menu span + span {
   margin: 20px;
 }
 
-div .container-main aside nav ul li {
+div.container-main aside nav ul li {
   text-align: center;
   line-height: 5vh;
   font-family: "Lato", sans-serif;
@@ -121,14 +234,14 @@ div .container-main aside nav ul li {
   font-weight: bold;
 }
 
-div .container-main main {
+div.container-main main {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: main;
   overflow: auto;
 }
 
-div .container-main main .content-home {
+div.container-main main .content-home {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -138,9 +251,7 @@ div .container-main main .content-home {
   padding-top: 20px;
 }
 
-div .container-main main .content-home .total-products,
-div .container-main main .content-home .total-users,
-div .container-main main .content-home .editor-view {
+div.container-main main .content-home .total, div.container-main main .content-home .editor-view {
   margin: 20px;
   padding: 30px;
   background-color: #ccc;
@@ -152,13 +263,11 @@ div .container-main main .content-home .editor-view {
   font-size: large;
 }
 
-div .container-main main .content-home .total-products span,
-div .container-main main .content-home .total-users span,
-div .container-main main .content-home .editor-view span {
+div.container-main main .content-home .total span, div.container-main main .content-home .editor-view span {
   font-size: 40px;
 }
 
-div .container-main main .content-home div:hover {
+div.container-main main .content-home div:hover {
   background-color: #ffd271;
   color: orangered;
   -webkit-box-shadow: 3px 3px 0 darkorange;
@@ -166,7 +275,7 @@ div .container-main main .content-home div:hover {
   cursor: pointer;
 }
 
-div .container-main main .content-home #editor:hover {
+div.container-main main .content-home .editor-view:hover {
   background-color: #ccc;
   -webkit-box-shadow: 3px 3px 0 darkslategray;
           box-shadow: 3px 3px 0 darkslategray;
@@ -174,12 +283,12 @@ div .container-main main .content-home #editor:hover {
   cursor: auto;
 }
 
-div .container-main main #table-head span {
+div.container-main main .table-head span {
   font-weight: 900;
   font-size: 16px;
 }
 
-div .container-main main #btn-register, div .container-main main #btn-cancel, div .container-main main #btn-confirm {
+div.container-main main .btn-register, div.container-main main .btn-cancel, div.container-main main .btn-confirm {
   background-color: #5c71eb;
   color: white;
   -webkit-box-shadow: 3px 3px 0 #293b9e;
@@ -193,14 +302,14 @@ div .container-main main #btn-register, div .container-main main #btn-cancel, di
   font-size: medium;
 }
 
-div .container-main main #btn-register:hover, div .container-main main #btn-cancel:hover, div .container-main main #btn-confirm:hover {
+div.container-main main .btn-register:hover, div.container-main main .btn-cancel:hover, div.container-main main .btn-confirm:hover {
   background-color: #293b9e;
   -webkit-box-shadow: 3px 3px 0 #0d1853;
           box-shadow: 3px 3px 0 #0d1853;
   cursor: pointer;
 }
 
-div .container-main main #btn-cancel, div .container-main main #btn-confirm {
+div.container-main main .btn-cancel, div.container-main main .btn-confirm {
   background-color: #f34040;
   color: darkred;
   height: 35px;
@@ -210,14 +319,14 @@ div .container-main main #btn-cancel, div .container-main main #btn-confirm {
       justify-self: right;
 }
 
-div .container-main main #btn-cancel:hover, div .container-main main #btn-confirm:hover {
+div.container-main main .btn-cancel:hover, div.container-main main .btn-confirm:hover {
   background-color: #830707;
   -webkit-box-shadow: 3px 3px 0 #380202;
           box-shadow: 3px 3px 0 #380202;
   color: white;
 }
 
-div .container-main main #btn-confirm {
+div.container-main main .btn-confirm {
   background-color: #48c52f;
   -webkit-box-shadow: 3px 3px 0 #338a21;
           box-shadow: 3px 3px 0 #338a21;
@@ -226,14 +335,14 @@ div .container-main main #btn-confirm {
       justify-self: left;
 }
 
-div .container-main main #btn-confirm:hover {
+div.container-main main .btn-confirm:hover {
   background-color: darkgreen;
   -webkit-box-shadow: 3px 3px 0 #380202;
           box-shadow: 3px 3px 0 #380202;
   color: white;
 }
 
-div .container-main main .form-section {
+div.container-main main .form-section {
   max-width: 450px;
   display: -ms-grid;
   display: grid;
@@ -243,7 +352,7 @@ div .container-main main .form-section {
   color: #585858;
 }
 
-div .container-main main .form-section .form-labels {
+div.container-main main .form-section .form-labels {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -251,7 +360,7 @@ div .container-main main .form-section .form-labels {
   margin-inline: 5px;
 }
 
-div .container-main main .form-section .form-labels label {
+div.container-main main .form-section .form-labels label {
   font-weight: bold;
   -webkit-box-pack: left;
       -ms-flex-pack: left;
@@ -259,7 +368,7 @@ div .container-main main .form-section .form-labels label {
   margin-inline: 20px;
 }
 
-div .container-main main .form-section .form-labels input {
+div.container-main main .form-section .form-labels input {
   background-color: #ebebeb;
   border: 0;
   margin-inline: 20px;
@@ -269,11 +378,11 @@ div .container-main main .form-section .form-labels input {
   padding-bottom: 10px;
 }
 
-div .container-main main .form-section #radio-option {
+div.container-main main .form-section .radio-option {
   font-weight: 400;
 }
 
-div .container-main main .form-section .form-buttons {
+div.container-main main .form-section .form-buttons {
   margin-inline: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -283,14 +392,14 @@ div .container-main main .form-section .form-buttons {
       grid-template-columns: 1fr;
 }
 
-div .container-main main .form-section .form-buttons button {
+div.container-main main .form-section .form-buttons button {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   width: 150px;
 }
 
-div .container-main main .table div {
+div.container-main main .table div {
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -300,7 +409,7 @@ div .container-main main .table div {
   width: min-content;
 }
 
-div .container-main main .table div button {
+div.container-main main .table div button {
   background-color: white;
   border: 0;
   border-radius: 5px;
@@ -308,25 +417,25 @@ div .container-main main .table div button {
   margin-inline: 5px;
 }
 
-div .container-main main .table #btn-delete, div .container-main main .table #btn-keep {
+div.container-main main .table .btn-delete, div.container-main main .table .btn-keep {
   background-color: #e23b3b;
   border: 0;
   color: white;
 }
 
-div .container-main main .table #btn-keep {
+div.container-main main .table .btn-keep {
   background-color: #5252e6;
 }
 
-div .container-main main .table #btn-delete:hover, div .container-main main .table #btn-keep:hover {
+div.container-main main .table .btn-delete:hover, div.container-main main .table .btn-keep:hover {
   background: red;
 }
 
-div .container-main main .table #btn-keep:hover {
+div.container-main main .table .btn-keep:hover {
   background: #25259c;
 }
 
-div .container-main footer {
+div.container-main footer {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -337,12 +446,12 @@ div .container-main footer {
       align-self: center;
 }
 
-div .container-main footer a {
+div.container-main footer a {
   text-decoration: none;
   color: lightslategrey;
 }
 
-.admin {
+#admin {
   background-color: goldenrod;
   border-radius: 10px;
   padding-inline: 10px;
@@ -350,7 +459,7 @@ div .container-main footer a {
   text-transform: capitalize;
 }
 
-.editor {
+#editor {
   background-color: darkgrey;
   border-radius: 10px;
   padding-inline: 10px;

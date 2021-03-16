@@ -98,9 +98,14 @@ const userReducer: Reducer = (state = INITIAL_STATE, action: any) => {
             deletedUserID = action.payload
             return {
                 ...state,
-                deletedUserID: deletedUserID
+                deletedUserID: deletedUserID,
+                //internalUsers: updatedInternalUsers
             }
         case UserActions.DELETE_USER_SUCCESS:
+            for (let i = 0; i < updatedInternalUsers.length; i++)
+                if (updatedInternalUsers[i].id === deletedUserID)
+                    updatedInternalUsers.splice(i, 1)
+
             return {
                 ...state,
                 internalUsers: updatedInternalUsers
@@ -109,10 +114,9 @@ const userReducer: Reducer = (state = INITIAL_STATE, action: any) => {
             for (let i = 0; i < updatedInternalUsers.length; i++)
                 if (updatedInternalUsers[i].id === deletedUserID)
                     updatedInternalUsers.splice(i, 1)
-
             return {
                 ...state,
-                internalUsers: updatedInternalUsers
+                // internalUsers: updatedInternalUsers
             }
         default: return state
     }

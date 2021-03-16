@@ -33,19 +33,19 @@ export default function HomePage() {
                 ? <Redirect to="/login" exact />
                 : <Content>
                     <div className="content-home">
-                        <div className="total-products"
+                        <div className="total"
                             onClick={() => setGoToLink("products")}>
                             {goToLink === "products" && <Redirect to="/products" exact />}
                             <p>Produtos cadastrados</p>
                             <span>{productList?.length}</span>
                         </div>
                         {isAdmin
-                            ? <div className="total-users" onClick={() => setGoToLink("users")}>
+                            ? <div className="total" onClick={() => setGoToLink("users")}>
                                 {goToLink === "users" && <Redirect to="/users" exact />}
                                 <p>Usuários cadastrados</p>
                                 <span>{internalUsers?.length}</span>
                             </div>
-                            : <div className="editor-view" id="editor">
+                            : <div className="editor-view" >
                                 <p>Usuários cadastrados</p>
                                 <span>{internalUsers?.length}</span>
                             </div>

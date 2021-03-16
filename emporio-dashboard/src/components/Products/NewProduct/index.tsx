@@ -29,7 +29,7 @@ export default function NewProduct() {
             {!showRegisterSection
                 ?
                 <div>
-                    <button id="btn-register" onClick={show}>
+                    <button className="btn-register" onClick={show}>
                         <span>Cadastrar</span>
                     </button>
                 </div>
@@ -74,8 +74,8 @@ export default function NewProduct() {
                             </div>
                         </div>
                         <div className="form-buttons">
-                            <button id="btn-cancel" onClick={show}>Cancelar</button>
-                            <button id="btn-confirm" type="submit">Salvar</button>
+                            <button className="btn-cancel" onClick={show}>Cancelar</button>
+                            <button className="btn-confirm" type="submit">Salvar</button>
                         </div>
                     </form>
                 </div >}

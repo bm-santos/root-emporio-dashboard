@@ -1,3 +1,7 @@
+// @import "../pages/Home/_home.scss";
+@import "../pages/Login/_login.scss";
+// @import "../pages/Products/_products.scss";
+// @import "../pages/Users/_users.scss";
 html,
 body {
     margin: 0;
@@ -5,7 +9,7 @@ body {
     font-size: 18px;
     font-family: "Lato", sans-serif !important;
 }
-div .container-main {
+div.container-main {
     display: grid;
     grid-template-columns: 1fr 8fr;
     grid-template-rows: 10vh 80vh 10vh;
@@ -72,6 +76,7 @@ div .container-main {
                 margin-top: 0 auto;
                 padding: 0 0;
                 display: grid;
+                list-style-type: none;
                 li:hover {
                     background-color: #bbb;
                 }
@@ -98,8 +103,7 @@ div .container-main {
             display: flex;
             justify-content: start;
             padding-top: 20px;
-            .total-products,
-            .total-users {
+            .total {
                 margin: 20px;
                 padding: 30px;
                 background-color: #ccc;
@@ -119,23 +123,23 @@ div .container-main {
                 cursor: pointer;
             }
             .editor-view {
-                @extend .total-users;
+                @extend .total;
             }
-            #editor:hover {
+            .editor-view:hover {
                 background-color: #ccc;
                 box-shadow: 3px 3px 0 darkslategray;
                 color: black;
                 cursor: auto;
             }
         }
-        #table-head {
+        .table-head {
             span {
                 font-weight: 900;
                 font-size: 16px;
             }
         }
 
-        #btn-register {
+        .btn-register {
             background-color: rgb(92, 113, 235);
             color: white;
             box-shadow: 3px 3px 0 rgb(41, 59, 158);
@@ -147,34 +151,34 @@ div .container-main {
             height: 50px;
             font-size: medium;
         }
-        #btn-register:hover {
+        .btn-register:hover {
             background-color: rgb(41, 59, 158);
             box-shadow: 3px 3px 0 rgb(13, 24, 83);
             cursor: pointer;
         }
-        #btn-cancel {
-            @extend #btn-register;
+        .btn-cancel {
+            @extend .btn-register;
             background-color: #f34040;
             color: darkred;
             height: 35px;
             box-shadow: 3px 3px 0 #c50c0c;
             justify-self: right;
         }
-        #btn-cancel:hover {
-            @extend #btn-register:hover;
+        .btn-cancel:hover {
+            @extend .btn-register:hover;
             background-color: #830707;
             box-shadow: 3px 3px 0 #380202;
             color: white;
         }
-        #btn-confirm {
-            @extend #btn-cancel;
+        .btn-confirm {
+            @extend .btn-cancel;
             background-color: #48c52f;
             box-shadow: 3px 3px 0 #338a21;
             color: darkgreen;
             justify-self: left;
         }
-        #btn-confirm:hover {
-            @extend #btn-cancel:hover;
+        .btn-confirm:hover {
+            @extend .btn-cancel:hover;
             background-color: darkgreen;
             box-shadow: 3px 3px 0 #380202;
             color: white;
@@ -204,7 +208,7 @@ div .container-main {
                     padding-bottom: 10px;
                 }
             }
-            #radio-option {
+            .radio-option {
                 font-weight: 400;
             }
             .form-buttons {
@@ -231,20 +235,20 @@ div .container-main {
                     margin-inline: 5px;
                 }
             }
-            #btn-delete {
+            .btn-delete {
                 background-color: rgb(226, 59, 59);
                 border: 0;
                 color: white;
             }
-            #btn-keep {
-                @extend #btn-delete;
+            .btn-keep {
+                @extend .btn-delete;
                 background-color: rgb(82, 82, 230);
             }
-            #btn-delete:hover {
+            .btn-delete:hover {
                 background: red;
             }
-            #btn-keep:hover {
-                @extend #btn-delete:hover;
+            .btn-keep:hover {
+                @extend .btn-delete:hover;
                 background: rgb(37, 37, 156);
             }
         }
@@ -260,14 +264,14 @@ div .container-main {
     }
 }
 
-.admin {
+#admin {
     background-color: goldenrod;
     border-radius: 10px;
     padding-inline: 10px;
     color: white;
     text-transform: capitalize;
 }
-.editor {
+#editor {
     background-color: darkgrey;
     border-radius: 10px;
     padding-inline: 10px;

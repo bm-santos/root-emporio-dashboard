@@ -1,0 +1,31 @@
+aside {
+    background-color: rgb(240, 240, 240);
+    grid-area: aside;
+    overflow: hidden;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+
+    nav {
+        ul {
+            margin-top: 0 auto;
+            padding: 0 0;
+            display: grid;
+            li:hover {
+                background-color: #bbb;
+            }
+            .link-menu {
+                text-decoration: none;
+                span + span {
+                    margin: 20px;
+                }
+            }
+            li {
+                text-align: center;
+                line-height: 5vh;
+                font-family: "Lato", sans-serif;
+                color: #777;
+                font-weight: bold;
+            }
+        }
+    }
+}

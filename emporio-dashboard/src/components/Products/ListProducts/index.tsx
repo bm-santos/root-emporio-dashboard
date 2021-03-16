@@ -10,45 +10,48 @@ export const ListProducts = () => {
     const [confirmExclusion, setConfirmExclusion] = useState<boolean>(false)
     const dispatch = useDispatch()
 
-    return (
-        <Table className="table" size="small" stickyHeader >
-            <TableHead >
-                <TableRow id="table-head" >
-                    <TableCell align="center"><span>Foto do produto</span></TableCell>
-                    <TableCell align="center"><span>Título</span></TableCell>
-                    <TableCell align="center"><span>Descrição</span></TableCell>
-                    <TableCell align="center"><span>Preço</span></TableCell>
+    const deleteItem = (id: number) => {
+        setConfirmExclusion(!confirmExclusion)
+        return dispatch(deleteProductRequest(id))
+    }
+    return (<Table className="table" size="small" stickyHeader >
+        <TableHead >
+            <TableRow className="table-head" >
+                <TableCell align="center"><span>Foto do produto</span></TableCell>
+                <TableCell align="center"><span>Título</span></TableCell>
+                <TableCell align="center"><span>Descrição</span></TableCell>
+                <TableCell align="center"><span>Preço</span></TableCell>
+                {isAdmin &&
+                    <TableCell hidden align="center"><span>Excluir</span></TableCell>
+                }
+            </TableRow>
+        </TableHead>
+        <TableBody>
+            {isLogged && productList?.slice(0).reverse().map((beer: any) => (
+                <TableRow key={beer.id}>
+                    <TableCell align="center">
+                        <img style={{ maxHeight: "50px" }} src={beer.image} alt={beer.description} />
+                    </TableCell>
+                    <TableCell align="center">{beer.description}</TableCell>
+                    <TableCell align="center">{beer.title}</TableCell>
+                    <TableCell align="center">{beer.price}</TableCell>
                     {isAdmin &&
-                        <TableCell hidden align="center"><span>Excluir</span></TableCell>
+                        <TableCell align="center">
+                            <div>
+                                {!confirmExclusion
+                                    ? <button onClick={() => setConfirmExclusion(!confirmExclusion)} ><BinIcon /></button>
+                                    : <>
+                                        <button className="btn-keep" onClick={() => setConfirmExclusion(!confirmExclusion)}> Não </button>
+                                        <button className="btn-delete" onClick={() => deleteItem(beer.id)}>Sim</button>
+                                    </>
+                                }
+                            </div>
+                        </TableCell>
                     }
                 </TableRow>
-            </TableHead>
-            <TableBody>
-                {isLogged && productList?.slice(0).reverse().map((beer: any) => (
-                    <TableRow key={beer.id}>
-                        <TableCell align="center">
-                            <img style={{ maxHeight: "50px" }} src={beer.image} alt={beer.description} />
-                        </TableCell>
-                        <TableCell align="center">{beer.description}</TableCell>
-                        <TableCell align="center">{beer.title}</TableCell>
-                        <TableCell align="center">{beer.price}</TableCell>
-                        {isAdmin &&
-                            <TableCell align="center">
-                                <div>
-                                    {!confirmExclusion
-                                        ? <button onClick={() => setConfirmExclusion(!confirmExclusion)} ><BinIcon /></button>
-                                        : <>
-                                            <button id="btn-keep" onClick={() => setConfirmExclusion(!confirmExclusion)}> Não </button>
-                                            <button id="btn-delete" onClick={() => dispatch(deleteProductRequest(beer.id))}>Sim</button>
-                                        </>
-                                    }
-                                </div>
-                            </TableCell>
-                        }
-                    </TableRow>
-                ))}
-            </TableBody>
-        </Table >
+            ))}
+        </TableBody>
+    </Table >
     )
 }
 export default ListProducts

@@ -15,18 +15,25 @@
       "id": 2
     },
     {
-      "email": "maria@facebook.com",
-      "password": "$2a$10$jbI/A8DVM7542O.qfv19zOXhR.5Tgwm8VzBKd4blugzmVjvlTAn8C",
-      "name": "Maria",
+      "email": "bruno@ambev.com",
+      "password": "$2a$10$BqK.dB9ArVtO9xX.aHMT1.3wS/AKeKerp5tHRYX1A6LEJ0GRrdl52",
+      "name": "Bruno",
       "role": "admin",
       "id": 3
     },
     {
-      "email": "marcoshelen@facebook.com",
-      "password": "$2a$10$0pgGPkjoMx81tKjgGCstcuze4AAdXArfyTn/R2BSY4IiPNNasHwx.",
-      "name": "Marcos",
+      "email": "sandra@ambev.com",
+      "password": "$2a$10$c5fYKQfH7Io0.WPE7SciXeVSrH7MCtaSTQehwUWooAn6G22yPXF0m",
+      "name": "Sandra",
       "role": "editor",
-      "id": 7
+      "id": 4
+    },
+    {
+      "email": "joao@ambev.com",
+      "password": "$2a$10$Rn/8/ffzcszRib3t/LoqKeJ49yLsMZPguy8nRn092zySM.bRDO3Re",
+      "name": "João",
+      "role": "editor",
+      "id": 5
     }
   ],
   "register": [],
@@ -108,13 +115,6 @@
       "price": "R$ 8,49",
       "image": "https://emporiodacerveja.vtexassets.com/arquivos/ids/172313-800-auto?width=800&height=auto&aspect=true",
       "id": 11
-    },
-    {
-      "title": "6 Cervejas Stella Artois, 1 Balde de Zinco, Embalagem para Viagem",
-      "description": "Kit De Cerveja Stella Artois",
-      "price": "R$ 152,90",
-      "image": "https://static.giulianaflores.com.br/images/product/27656gg.jpg?ims=405x",
-      "id": 12
     }
   ]
 }

@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Routes from './routes';
 import { Toaster } from 'react-hot-toast';
 import theme from './styles'
+import "./styles/index.css"
 
 export default function App() {
   return (

@@ -9,10 +9,16 @@ export default function ListUsers() {
     const [confirmExclusion, setConfirmExclusion] = useState<boolean>(false)
 
     const dispatch = useDispatch()
+
+    const deleteItem = (id: number) => {
+        setConfirmExclusion(!confirmExclusion)
+        return dispatch(deleteUserRequest(id))
+    }
+
     return (
         <Table className="table" size="small" stickyHeader >
             <TableHead>
-                <TableRow id="table-head" >
+                <TableRow className="table-head" >
                     <TableCell align="center"><span>Nome</span></TableCell>
                     <TableCell align="center"><span>E-mail</span></TableCell>
                     <TableCell align="center"><span>Permissão</span></TableCell>
@@ -24,14 +30,14 @@ export default function ListUsers() {
                     <TableRow key={user.id}>
                         <TableCell align="center">{user.name}</TableCell>
                         <TableCell align="center">{user.email}</TableCell>
-                        <TableCell align="center"><span className={user.role}>{user.role}</span></TableCell>
+                        <TableCell align="center"><span id={user.role}>{user.role}</span></TableCell>
                         <TableCell align="center">
                             <div>
                                 {!confirmExclusion
                                     ? <button onClick={() => setConfirmExclusion(!confirmExclusion)} ><BinIcon /></button>
                                     : <>
-                                        <button id="btn-keep" onClick={() => setConfirmExclusion(!confirmExclusion)}> Não </button>
-                                        <button id="btn-delete" onClick={() => dispatch(deleteUserRequest(user.id))} >Sim</button>
+                                        <button className="btn-keep" onClick={() => setConfirmExclusion(!confirmExclusion)}> Não </button>
+                                        <button className="btn-delete" onClick={() => deleteItem(user.id)} >Sim</button>
                                     </>
                                 }
                             </div>

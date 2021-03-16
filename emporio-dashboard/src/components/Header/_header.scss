@@ -1,0 +1,42 @@
+header {
+    background-color: #f0f0f0;
+    grid-area: header;
+    display: grid;
+    border-end-end-radius: 30px;
+    grid-template-columns: 2fr 5fr 1fr;
+    grid-template-areas: "logo user logout";
+    align-items: center;
+    div.logo {
+        justify-self: center;
+        :hover {
+            cursor: pointer;
+        }
+    }
+    div.user {
+        justify-self: right;
+        align-self: center;
+        span + span {
+            margin-left: 10px;
+        }
+    }
+    div.logout {
+        justify-self: center;
+        button {
+            background-color: #bebebe;
+            color: darkslategray;
+            border-radius: 10px;
+            border: 0;
+            margin: 10px;
+            padding-inline: 30px;
+            font-weight: 600;
+            height: 25px;
+            box-shadow: 3px 3px 0 darkslategray;
+        }
+        button:hover {
+            background-color: darkslategray;
+            box-shadow: 3px 3px 0 rgb(0, 0, 0);
+            color: white;
+            cursor: pointer;
+        }
+    }
+}
