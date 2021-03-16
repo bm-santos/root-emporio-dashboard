@@ -1,6 +1,7 @@
-import { AxiosResponse } from "axios";
-import { call, put } from "@redux-saga/core/effects";
 import { UserService } from "../../../services/local/localServices";
+import { call, put } from "@redux-saga/core/effects";
+import { AxiosResponse } from "axios";
+import toast from 'react-hot-toast';
 import {
     deleteUserFailure, deleteUserSuccess,
     getInfoFailure, getInfoSuccess,
@@ -8,7 +9,6 @@ import {
     newUserFailure, newUserSuccess,
     postLoginFailure, postLoginSuccess
 } from "./actions";
-import toast from 'react-hot-toast';
 
 export function* postLoginSaga(request: any) {
     try {

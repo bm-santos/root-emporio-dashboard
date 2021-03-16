@@ -1,8 +1,8 @@
 import { Route, Switch } from "react-router"
-import HomePage from "./pages/Home"
-import LoginPage from "./pages/Login"
 import ProductsPage from "./pages/Products"
+import LoginPage from "./pages/Login"
 import UsersPage from "./pages/Users"
+import HomePage from "./pages/Home"
 
 export default function Routes() {
     return (

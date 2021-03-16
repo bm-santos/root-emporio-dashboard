@@ -1,5 +1,5 @@
 import { action } from "typesafe-actions";
-import { ProductActions, ProductArray } from "./types";
+import { ProductActions } from "./types";
 
 export const getListRequest = () => action(ProductActions.GET_LIST_REQUEST)
 export const getListSuccess = (beerList: any) => action(ProductActions.GET_LIST_SUCCESS, beerList)

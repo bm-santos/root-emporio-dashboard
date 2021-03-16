@@ -1,8 +1,8 @@
-.content-home {
+div.content-home {
     display: flex;
     justify-content: start;
     padding-top: 20px;
-    .total {
+    div.total {
         margin: 20px;
         padding: 30px;
         background-color: #ccc;
@@ -21,10 +21,10 @@
         box-shadow: 3px 3px 0 darkorange;
         cursor: pointer;
     }
-    .editor-view {
+    div.editor-view {
         @extend .total;
     }
-    .editor:hover {
+    div.editor-view:hover {
         background-color: #ccc;
         box-shadow: 3px 3px 0 darkslategray;
         color: black;

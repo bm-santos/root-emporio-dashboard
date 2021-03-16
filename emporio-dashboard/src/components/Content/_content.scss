@@ -1,331 +1,53 @@
-// html,
-// body {
-//     margin: 0;
-//     padding: 0;
-//     font-size: 18px;
-//     font-family: "Lato", sans-serif !important;
-// }
-// div .container-main {
-//     display: grid;
-//     grid-template-columns: 1fr 8fr;
-//     grid-template-rows: 10vh 80vh 10vh;
-//     grid-template-areas:
-//         "header header"
-//         "aside main"
-//         "footer footer";
-//     padding-left: 1%;
-//     padding-right: 1%;
-//     grid-gap: 1%;
-//     font-size: 0.9rem;
+@import "../../pages/Home/home";
+@import "../register-section";
+@import "../Sidebar/sidebar";
+@import "../Footer/footer";
+@import "../Header/header";
+@import "../list-section";
 
-//     header {
-//         background-color: #f0f0f0;
-//         grid-area: header;
-//         display: grid;
-//         border-end-end-radius: 30px;
-//         grid-template-columns: 2fr 5fr 1fr;
-//         grid-template-areas: "logo user logout";
-//         align-items: center;
-//         .logo {
-//             justify-self: center;
-//             :hover {
-//                 cursor: pointer;
-//             }
-//         }
-//         .user {
-//             justify-self: right;
-//             align-self: center;
-//             span + span {
-//                 margin-left: 10px;
-//             }
-//         }
-//         .logout {
-//             justify-self: center;
-//             button {
-//                 background-color: #bebebe;
-//                 color: darkslategray;
-//                 border-radius: 10px;
-//                 border: 0;
-//                 margin: 10px;
-//                 padding-inline: 30px;
-//                 font-weight: 600;
-//                 height: 25px;
-//                 box-shadow: 3px 3px 0 darkslategray;
-//             }
-//             button:hover {
-//                 background-color: darkslategray;
-//                 box-shadow: 3px 3px 0 rgb(0, 0, 0);
-//                 color: white;
-//                 cursor: pointer;
-//             }
-//         }
-//     }
-//     aside {
-//         background-color: rgb(240, 240, 240);
-//         grid-area: aside;
-//         overflow: hidden;
-//         border-top-right-radius: 30px;
-//         border-bottom-left-radius: 30px;
+div.container-main {
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-areas:
+        "header header"
+        "aside main"
+        "footer footer";
+    padding-left: 1%;
+    padding-right: 1%;
+    grid-gap: 1%;
+    font-size: 0.9rem;
 
-//         nav {
-//             ul {
-//                 margin-top: 0 auto;
-//                 padding: 0 0;
-//                 display: grid;
-//                 li:hover {
-//                     background-color: #bbb;
-//                 }
-//                 .link-menu {
-//                     text-decoration: none;
-//                     span + span {
-//                         margin: 20px;
-//                     }
-//                 }
-//                 li {
-//                     text-align: center;
-//                     line-height: 5vh;
-//                     font-family: "Lato", sans-serif;
-//                     color: #777;
-//                     font-weight: bold;
-//                 }
-//             }
-//         }
-//     }
-//     main {
-//         grid-area: main;
-//         overflow: auto;
-//         .content-home {
-//             display: flex;
-//             justify-content: start;
-//             padding-top: 20px;
-//             .total-products,
-//             .total-users {
-//                 margin: 20px;
-//                 padding: 30px;
-//                 background-color: #ccc;
-//                 border-radius: 20px;
-//                 box-shadow: 3px 3px 0 darkslategray;
-//                 display: block;
-//                 text-align: center;
-//                 font-size: large;
-//                 span {
-//                     font-size: 40px;
-//                 }
-//             }
-//             div:hover {
-//                 background-color: rgb(255, 210, 113);
-//                 color: orangered;
-//                 box-shadow: 3px 3px 0 darkorange;
-//                 cursor: pointer;
-//             }
-//             .editor-view {
-//                 @extend .total-users;
-//             }
-//             #editor:hover {
-//                 background-color: #ccc;
-//                 box-shadow: 3px 3px 0 darkslategray;
-//                 color: black;
-//                 cursor: auto;
-//             }
-//         }
-//         #table-head {
-//             span {
-//                 font-weight: 900;
-//                 font-size: 16px;
-//             }
-//         }
+    main {
+        grid-area: main;
+        overflow: auto;
+    }
+}
 
-//         #btn-register {
-//             background-color: rgb(92, 113, 235);
-//             color: white;
-//             box-shadow: 3px 3px 0 rgb(41, 59, 158);
-//             border-radius: 10px;
-//             border: 0;
-//             margin: 10px;
-//             padding-inline: 30px;
-//             font-weight: 600;
-//             height: 50px;
-//             font-size: medium;
-//         }
-//         #btn-register:hover {
-//             background-color: rgb(41, 59, 158);
-//             box-shadow: 3px 3px 0 rgb(13, 24, 83);
-//             cursor: pointer;
-//         }
-//         #btn-cancel {
-//             @extend #btn-register;
-//             background-color: #f34040;
-//             color: darkred;
-//             height: 35px;
-//             box-shadow: 3px 3px 0 #c50c0c;
-//             justify-self: right;
-//         }
-//         #btn-cancel:hover {
-//             @extend #btn-register:hover;
-//             background-color: #830707;
-//             box-shadow: 3px 3px 0 #380202;
-//             color: white;
-//         }
-//         #btn-confirm {
-//             @extend #btn-cancel;
-//             background-color: #48c52f;
-//             box-shadow: 3px 3px 0 #338a21;
-//             color: darkgreen;
-//             justify-self: left;
-//         }
-//         #btn-confirm:hover {
-//             @extend #btn-cancel:hover;
-//             background-color: darkgreen;
-//             box-shadow: 3px 3px 0 #380202;
-//             color: white;
-//         }
-//         .form-section {
-//             max-width: 450px;
-//             display: grid;
-//             grid-template-rows: 2fr 1fr;
-//             overflow: hidden;
-//             color: rgb(88, 88, 88);
-//             .form-labels {
-//                 display: grid;
-//                 grid-template-columns: 1fr 1fr;
-//                 margin-inline: 5px;
-//                 label {
-//                     font-weight: bold;
-//                     justify-content: left;
-//                     margin-inline: 20px;
-//                 }
-//                 input {
-//                     background-color: rgb(235, 235, 235);
-//                     border: 0;
-//                     margin-inline: 20px;
-//                     border-radius: 5px;
-//                     max-width: 170px;
-//                     padding-top: 10px;
-//                     padding-bottom: 10px;
-//                 }
-//             }
-//             #radio-option {
-//                 font-weight: 400;
-//             }
-//             .form-buttons {
-//                 margin-inline: 5px;
-//                 display: flex;
-//                 justify-self: center;
-//                 grid-template-columns: 1fr;
-//                 button {
-//                     align-self: center;
-//                     width: 150px;
-//                 }
-//             }
-//         }
-//         .table {
-//             div {
-//                 margin: 0 auto;
-//                 display: flex;
-//                 width: min-content;
-//                 button {
-//                     background-color: white;
-//                     border: 0;
-//                     border-radius: 5px;
-//                     padding: 5px;
-//                     margin-inline: 5px;
-//                 }
-//             }
-//             #btn-delete {
-//                 background-color: rgb(226, 59, 59);
-//                 border: 0;
-//                 color: white;
-//             }
-//             #btn-keep {
-//                 @extend #btn-delete;
-//                 background-color: rgb(82, 82, 230);
-//             }
-//             #btn-delete:hover {
-//                 background: red;
-//             }
-//             #btn-keep:hover {
-//                 @extend #btn-delete:hover;
-//                 background: rgb(37, 37, 156);
-//             }
-//         }
-//     }
-//     footer {
-//         grid-area: footer;
-//         margin: 0 left;
-//         align-self: center;
-//         a {
-//             text-decoration: none;
-//             color: lightslategrey;
-//         }
-//     }
-// }
+@media only screen and (max-width: 660px) {
+    div .container-main {
+        display: grid;
+        grid-template-rows: 10vh 10vh 70vh 5vh;
 
-// .admin {
-//     background-color: goldenrod;
-//     border-radius: 10px;
-//     padding-inline: 10px;
-//     color: white;
-//     text-transform: capitalize;
-// }
-// .editor {
-//     background-color: darkgrey;
-//     border-radius: 10px;
-//     padding-inline: 10px;
-//     color: #fff;
-//     text-transform: capitalize;
-// }
+        main {
+            grid-column: 1/3;
+            grid-row: 3/3;
+            overflow-wrap: break-word;
+        }
+    }
+}
 
-// @media only screen and (max-width: 660px) {
-//     div .container-main {
-//         display: grid;
-//         grid-template-rows: 10vh 10vh 70vh 5vh;
-//         aside {
-//             grid-column: 1/3;
-//             grid-row: 2/3;
-//             display: grid;
-//             background-color: white;
-//             border-radius: 0;
-//             max-height: 10vh;
-//             padding: 0 auto;
-//             nav {
-//                 display: grid;
-//                 grid-template-columns: 1fr 1fr 1fr;
-//                 grid-gap: 1px;
-//                 margin: 0;
-//                 ul {
-//                     display: block;
-//                     margin-top: 0 auto;
-//                     padding: 0 0;
-//                     display: grid;
-//                     .link-menu {
-//                         text-decoration: none;
-//                     }
-//                     li {
-//                         color: #777;
-//                         font-weight: bold;
-//                     }
-//                     li:hover {
-//                         background-color: #fff;
-//                         border-bottom: 2px solid orange;
-//                     }
-//                 }
-//             }
-//         }
-//         main {
-//             grid-column: 1/3;
-//             grid-row: 3/3;
-//             overflow-wrap: break-word;
-//         }
-//         header {
-//             display: grid;
-//             grid-template-columns: 1fr 1fr 1fr;
-//             justify-items: center;
-//         }
-//         footer {
-//             display: grid;
-//             grid-column: 1/3;
-//             grid-row: 4/4;
-//             justify-self: center;
-//         }
-//     }
-// }
+#admin {
+    background-color: goldenrod;
+    border-radius: 10px;
+    padding-inline: 10px;
+    color: white;
+    text-transform: capitalize;
+}
+#editor {
+    background-color: darkgrey;
+    border-radius: 10px;
+    padding-inline: 10px;
+    color: #fff;
+    text-transform: capitalize;
+}

@@ -1,8 +1,8 @@
-import { useSelector } from "react-redux";
-import { Redirect } from "react-router";
-import Content from "../../components/Content";
 import ListUsers from "../../components/Users/ListUsers";
 import NewUser from "../../components/Users/NewUser";
+import Content from "../../components/Content";
+import { useSelector } from "react-redux";
+import { Redirect } from "react-router";
 import { Helmet } from "react-helmet"
 
 export default function UsersPage() {
@@ -19,7 +19,7 @@ export default function UsersPage() {
                     <h2>
                         Usuários cadastrados: {internalUsers.length}
                     </h2>
-                    <div className="container-users">
+                    <div>
                         <NewUser />
                         <ListUsers />
                     </div>

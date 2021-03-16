@@ -1,0 +1,82 @@
+@import "./Users/NewUser/new-user";
+.form-section {
+    max-width: 450px;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    overflow: hidden;
+    color: rgb(88, 88, 88);
+    .form-labels {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-inline: 5px;
+        label {
+            font-weight: bold;
+            justify-content: left;
+            margin-inline: 20px;
+        }
+        input {
+            background-color: rgb(235, 235, 235);
+            border: 0;
+            margin-inline: 20px;
+            border-radius: 5px;
+            max-width: 170px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+    .form-buttons {
+        margin-inline: 5px;
+        display: flex;
+        justify-self: center;
+        grid-template-columns: 1fr;
+        button {
+            align-self: center;
+            width: 150px;
+        }
+    }
+}
+.btn-register {
+    background-color: rgb(92, 113, 235);
+    color: white;
+    box-shadow: 3px 3px 0 rgb(41, 59, 158);
+    border-radius: 10px;
+    border: 0;
+    margin: 10px;
+    padding-inline: 30px;
+    font-weight: 600;
+    height: 50px;
+    font-size: medium;
+}
+.btn-register:hover {
+    background-color: rgb(41, 59, 158);
+    box-shadow: 3px 3px 0 rgb(13, 24, 83);
+    cursor: pointer;
+}
+
+.btn-cancel {
+    @extend .btn-register;
+    background-color: #f34040;
+    color: darkred;
+    height: 35px;
+    box-shadow: 3px 3px 0 #c50c0c;
+    justify-self: right;
+}
+.btn-cancel:hover {
+    @extend .btn-register:hover;
+    background-color: #830707;
+    box-shadow: 3px 3px 0 #380202;
+    color: white;
+}
+.btn-save {
+    @extend .btn-cancel;
+    background-color: #48c52f;
+    box-shadow: 3px 3px 0 #338a21;
+    color: darkgreen;
+    justify-self: left;
+}
+.btn-save:hover {
+    @extend .btn-cancel:hover;
+    background-color: darkgreen;
+    box-shadow: 3px 3px 0 #380202;
+    color: white;
+}

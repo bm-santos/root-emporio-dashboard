@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router";
-import Content from "../../components/Content";
-import { getListRequest } from "../../stores/ducks/product/actions";
 import { getInfoRequest, getUsersRequest } from "../../stores/ducks/user/actions";
+import { getListRequest } from "../../stores/ducks/product/actions";
+import { useDispatch, useSelector } from "react-redux";
+import Content from "../../components/Content";
+import { useEffect, useState } from "react";
+import { Redirect } from "react-router";
 import { Helmet } from "react-helmet"
 
 export default function HomePage() {

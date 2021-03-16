@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { Redirect } from 'react-router';
-import { useDispatch, useSelector } from "react-redux"
-import { LogoShield, LogoTextBox } from "../Images/Logo"
 import { logoutUser } from "../../stores/ducks/user/actions"
+import { LogoShield, LogoTextBox } from "../Images/Logo"
+import { useDispatch, useSelector } from "react-redux"
+import { Redirect } from 'react-router';
+import { useState } from 'react';
 
 export default function Header() {
     const { role, name } = useSelector((action: any) => action.userReducer)

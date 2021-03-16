@@ -1,6 +1,6 @@
-import { Reducer } from "redux";
 import { UserActions, UserState } from "./types";
 import { decodeToken } from "react-jwt"
+import { Reducer } from "redux";
 
 const INITIAL_STATE: UserState = {
     isLogged: false,
@@ -116,7 +116,6 @@ const userReducer: Reducer = (state = INITIAL_STATE, action: any) => {
                     updatedInternalUsers.splice(i, 1)
             return {
                 ...state,
-                // internalUsers: updatedInternalUsers
             }
         default: return state
     }

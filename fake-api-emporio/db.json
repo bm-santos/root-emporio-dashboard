@@ -34,6 +34,13 @@
       "name": "João",
       "role": "editor",
       "id": 5
+    },
+    {
+      "email": "mara@ambev.com",
+      "password": "$2a$10$VqIjEjN5XE0BSZGal3jiIucZ8DuTlwOgaYYMLi7qcHv7zvtubCt5m",
+      "name": "Mara",
+      "role": "admin",
+      "id": 6
     }
   ],
   "register": [],

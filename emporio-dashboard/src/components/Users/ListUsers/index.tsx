@@ -1,8 +1,8 @@
 import { Table, TableBody, TableCell, TableHead, TableRow } from "@material-ui/core"
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { deleteUserRequest } from "../../../stores/ducks/user/actions";
+import { useDispatch, useSelector } from "react-redux";
 import { BinIcon } from "../../Images/Icons";
+import { useState } from "react";
 
 export default function ListUsers() {
     const { internalUsers } = useSelector((state: any) => state.userReducer)
@@ -34,7 +34,7 @@ export default function ListUsers() {
                         <TableCell align="center">
                             <div>
                                 {!confirmExclusion
-                                    ? <button onClick={() => setConfirmExclusion(!confirmExclusion)} ><BinIcon /></button>
+                                    ? <button onClick={() => setConfirmExclusion(!confirmExclusion)} ><BinIcon color="#ff0000" /></button>
                                     : <>
                                         <button className="btn-keep" onClick={() => setConfirmExclusion(!confirmExclusion)}> Não </button>
                                         <button className="btn-delete" onClick={() => deleteItem(user.id)} >Sim</button>

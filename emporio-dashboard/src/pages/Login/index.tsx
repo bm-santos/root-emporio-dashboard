@@ -1,10 +1,10 @@
-import { Helmet } from "react-helmet"
-import { Redirect } from "react-router"
-import { useForm } from "react-hook-form"
-import { useDispatch, useSelector } from "react-redux"
-import { UserLogin } from "../../stores/ducks/user/types"
-import { postLoginRequest } from "../../stores/ducks/user/actions"
 import { LogoShield, LogoTextBox } from "../../components/Images/Logo"
+import { postLoginRequest } from "../../stores/ducks/user/actions"
+import { UserLogin } from "../../stores/ducks/user/types"
+import { useDispatch, useSelector } from "react-redux"
+import { useForm } from "react-hook-form"
+import { Redirect } from "react-router"
+import { Helmet } from "react-helmet"
 
 export default function LoginPage() {
     const { isLogged } = useSelector((state: any) => state.userReducer)
@@ -53,7 +53,7 @@ export default function LoginPage() {
                                 ref={register} /></div>
                     </div>
                     <div className="form-button">
-                        <button className="btn-confirm" type="submit">Entrar</button>
+                        <button className="btn-save" type="submit">Entrar</button>
                     </div>
                 </form>
             </div >

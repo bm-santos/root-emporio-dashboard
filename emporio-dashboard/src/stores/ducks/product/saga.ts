@@ -1,12 +1,12 @@
+import { ProductService } from "../../../services/local/localServices";
 import { call, put } from "@redux-saga/core/effects";
 import { AxiosResponse } from "axios";
-import { ProductService } from "../../../services/local/localServices";
+import toast from 'react-hot-toast';
 import {
     getListSuccess, getListFailure,
     newProductSuccess, newProductFailure,
     deleteProductSuccess, deleteProductFailure
 } from "./actions";
-import toast from 'react-hot-toast';
 
 export function* getListSaga() {
     try {

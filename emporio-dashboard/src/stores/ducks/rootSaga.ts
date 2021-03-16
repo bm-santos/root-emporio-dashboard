@@ -1,8 +1,7 @@
-
-import { takeLatest, all } from "redux-saga/effects"
-import { deleteProductSaga, getListSaga, newProductSaga } from "./product/saga"
-import { ProductActions } from "./product/types"
 import { getInfoSaga, postLoginSaga, getUsersSaga, newUserSaga, deleteUserSaga } from "./user/saga"
+import { deleteProductSaga, getListSaga, newProductSaga } from "./product/saga"
+import { takeLatest, all } from "redux-saga/effects"
+import { ProductActions } from "./product/types"
 import { UserActions } from "./user/types"
 
 export default function* rootSaga(): any {

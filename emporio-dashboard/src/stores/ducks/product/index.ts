@@ -1,5 +1,5 @@
-import { Reducer } from "redux"
 import { ProductActions, ProductState } from "./types"
+import { Reducer } from "redux"
 
 const INITIAL_STATE: ProductState = {
     productList: [],

@@ -1,7 +1,7 @@
 import { Table, TableBody, TableCell, TableHead, TableRow } from "@material-ui/core"
+import { deleteProductRequest } from "../../../stores/ducks/product/actions"
 import { useDispatch, useSelector } from "react-redux"
 import { BinIcon } from "../../Images/Icons"
-import { deleteProductRequest } from "../../../stores/ducks/product/actions"
 import { useState } from "react"
 
 export const ListProducts = () => {
@@ -39,7 +39,7 @@ export const ListProducts = () => {
                         <TableCell align="center">
                             <div>
                                 {!confirmExclusion
-                                    ? <button onClick={() => setConfirmExclusion(!confirmExclusion)} ><BinIcon /></button>
+                                    ? <button onClick={() => setConfirmExclusion(!confirmExclusion)} ><BinIcon color="#ff0000" /></button>
                                     : <>
                                         <button className="btn-keep" onClick={() => setConfirmExclusion(!confirmExclusion)}> Não </button>
                                         <button className="btn-delete" onClick={() => deleteItem(beer.id)}>Sim</button>

@@ -1,8 +1,8 @@
-import { useSelector } from "react-redux"
-import { Redirect } from "react-router"
-import Content from "../../components/Content"
 import ListProducts from "../../components/Products/ListProducts"
 import NewProduct from "../../components/Products/NewProduct"
+import Content from "../../components/Content"
+import { useSelector } from "react-redux"
+import { Redirect } from "react-router"
 import { Helmet } from "react-helmet"
 
 export default function ProductsPage() {

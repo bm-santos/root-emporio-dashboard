@@ -7,3 +7,11 @@ footer {
         color: lightslategrey;
     }
 }
+@media only screen and (max-width: 660px) {
+    footer {
+        display: grid;
+        grid-column: 1/3;
+        grid-row: 4/4;
+        justify-self: center;
+    }
+}

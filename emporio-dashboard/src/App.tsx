@@ -1,7 +1,7 @@
 import { ThemeProvider, CssBaseline } from '@material-ui/core'
 import { BrowserRouter } from 'react-router-dom';
-import Routes from './routes';
 import { Toaster } from 'react-hot-toast';
+import Routes from './routes';
 import theme from './styles'
 import "./styles/index.css"
 

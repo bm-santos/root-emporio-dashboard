@@ -1,15 +1,13 @@
-/* eslint-disable jsx-a11y/aria-role */
-import { useSelector } from "react-redux"
-import { Redirect } from "react-router"
-import { Link } from "react-router-dom"
 import { HomeIcon, ProductsIcon, UserIcon } from "../Images/Icons"
+import { Link, Redirect } from "react-router-dom"
+import { useSelector } from "react-redux"
 
 export default function SideBar() {
     const { isAdmin, isLogged } = useSelector((action: any) => action.userReducer)
     return (
         <>
             {!isLogged && <Redirect to="/login" exact />}
-            <nav role="full-horizontal" className="menu">
+            <nav className="menu">
                 <ul>
                     <Link className="link-menu" to="/">
                         <li>

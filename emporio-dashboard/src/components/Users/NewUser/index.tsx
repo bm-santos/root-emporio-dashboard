@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useForm } from "react-hook-form"
 import { newUserRequest } from "../../../stores/ducks/user/actions";
 import { UserArray } from "../../../stores/ducks/user/types";
+import { useDispatch } from "react-redux";
+import { useForm } from "react-hook-form"
+import { useState } from "react";
 
 export default function NewUser() {
     const [showRegisterSection, setShowRegisterSection] = useState<boolean>(false)
@@ -76,7 +76,7 @@ export default function NewUser() {
                         </div>
                         <div className="form-buttons">
                             <button className="btn-cancel" onClick={show}>Cancelar</button>
-                            <button className="btn-confirm" type="submit">Salvar</button>
+                            <button className="btn-save" type="submit">Salvar</button>
                         </div>
                     </form>
                 </div>}

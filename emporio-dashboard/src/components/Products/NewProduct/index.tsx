@@ -1,8 +1,8 @@
-import { useState } from "react"
-import { useDispatch } from "react-redux"
 import { newProductRequest } from "../../../stores/ducks/product/actions"
-import { useForm } from "react-hook-form"
 import { ProductArray } from "../../../stores/ducks/product/types";
+import { useDispatch } from "react-redux"
+import { useForm } from "react-hook-form"
+import { useState } from "react"
 
 
 export default function NewProduct() {
@@ -75,7 +75,7 @@ export default function NewProduct() {
                         </div>
                         <div className="form-buttons">
                             <button className="btn-cancel" onClick={show}>Cancelar</button>
-                            <button className="btn-confirm" type="submit">Salvar</button>
+                            <button className="btn-save" type="submit">Salvar</button>
                         </div>
                     </form>
                 </div >}

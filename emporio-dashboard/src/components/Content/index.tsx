@@ -1,6 +1,6 @@
+import SideBar from "../SideBar";
 import Footer from "../Footer";
 import Header from "../Header";
-import SideBar from "../SideBar";
 
 export default function Content(props: any) {
     return (
