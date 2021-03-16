@@ -8,10 +8,10 @@ Dashboard administrativo que permite gerenciar os produtos e usuários cadastrad
 *Apenas administradores podem visualizar a página de usuários.
 
 ## Demonstração
-![](https://github.com/bm-santos/root-emporio-dashboard/tree/main/emporio-dashboard/src/assets/demo-web.gif)
+![](https://github.com/bm-santos/root-emporio-dashboard/blob/main/emporio-dashboard/src/assets/demo-web.gif)
 > Layout Web
 
-![](https://github.com/bm-santos/root-emporio-dashboard/blob/main/emporio-dashboard/src/assets/demo-mobile.gif)
+[](https://github.com/bm-santos/root-emporio-dashboard/blob/main/emporio-dashboard/src/assets/demo-mobile.gif)
 > Layout Mobile
 
 ## Como usar este repositório
