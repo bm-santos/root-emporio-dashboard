@@ -50,6 +50,7 @@ export default function HomePage() {
                             </div>
                             : <div className="editor-view" >
                                 <p>Usuários cadastrados</p>
+                                <span><UserIcon h="40" color="black" /></span>
                                 <span>{internalUsers?.length}</span>
                             </div>
                         }
