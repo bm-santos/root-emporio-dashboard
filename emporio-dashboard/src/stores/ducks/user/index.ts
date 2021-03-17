@@ -99,7 +99,6 @@ const userReducer: Reducer = (state = INITIAL_STATE, action: any) => {
             return {
                 ...state,
                 deletedUserID: deletedUserID,
-                //internalUsers: updatedInternalUsers
             }
         case UserActions.DELETE_USER_SUCCESS:
             for (let i = 0; i < updatedInternalUsers.length; i++)

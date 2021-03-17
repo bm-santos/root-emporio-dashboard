@@ -2,7 +2,6 @@ header {
     background-color: #ffa935;
     grid-area: header;
     display: grid;
-    // border-end-end-radius: 30px;
     grid-template-columns: 2fr 5fr 1fr;
     grid-template-areas: "logo user logout";
     align-items: center;
