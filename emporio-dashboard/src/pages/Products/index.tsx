@@ -18,7 +18,7 @@ export default function ProductsPage() {
                 ? <Redirect to="/login" exact />
                 : <Content>
                     <h2>
-                        Produtos cadastrados: {productList?.length}
+                        Produtos cadastrados: <span>{productList?.length}</span>
                     </h2>
                     <NewProduct />
                     <ListProducts />

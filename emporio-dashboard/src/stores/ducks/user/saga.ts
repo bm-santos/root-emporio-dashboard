@@ -16,7 +16,17 @@ export function* postLoginSaga(request: any) {
         yield put(postLoginSuccess(response))
     } catch (err) {
         yield put(postLoginFailure())
-        toast.error("Conta não cadastrada")
+        switch (err.response.data) {
+            case "Cannot find user":
+                toast.error('Conta não encontrada');
+                break;
+            case "Incorrect password":
+                toast.error('Senha incorreta');
+                break;
+            default:
+                toast.error("Erro no servidor\nAtualize a página")
+                break;
+        }
     }
 }
 export function* getInfoSaga(id: any) {
@@ -44,7 +54,14 @@ export function* newUserSaga(data: any) {
         toast.success('Cadastrado realizado com sucesso')
     } catch (err) {
         yield put(newUserFailure())
-        toast.error('Falha no cadastro. Atualize a página.')
+        switch (err.response.status) {
+            case 400:
+                toast.error('Oooops! Este e-mail já existe.');
+                break;
+            default:
+                toast.error('Falha no cadastro. Atualize a página.');
+                break;
+        }
     }
 }
 
@@ -55,6 +72,14 @@ export function* deleteUserSaga(id: any) {
         toast.success('Cadastrado excluído com sucesso')
     } catch (err) {
         yield put(deleteUserFailure())
+        switch (err.response.status) {
+            case 404:
+                toast.success('Cadastrado excluído com sucesso');
+                break;
+            default:
+                toast.error('Falha na exclusão. Atualize a página.')
+                break;
+        }
         toast.error('Falha na exclusão. Atualize a página.')
     }
 }

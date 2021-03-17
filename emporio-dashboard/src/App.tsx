@@ -14,17 +14,18 @@ export default function App() {
           toastOptions={{
             success: {
               style: {
-                background: 'green',
-                color: 'white'
+                background: '#ccffdd',
+                color: 'green'
               },
             },
             error: {
               style: {
-                background: 'red',
-                color: 'white'
+                background: '#ffcccc',
+                color: 'red'
               },
             },
-          }} />
+          }}
+        />
         <Routes />
       </BrowserRouter>
     </ThemeProvider>

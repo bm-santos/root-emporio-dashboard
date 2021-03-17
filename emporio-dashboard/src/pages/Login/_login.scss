@@ -1,19 +1,21 @@
+@import "../../components/Button/button";
+
 div.bg {
     background-image: url(/src/components/Images/bg-beers.svg);
-    background-color: white;
+    background-color: #eee;
     background-repeat: repeat;
     background-attachment: fixed;
     height: 100vh;
-    padding-top: 100px;
+    padding-top: 50px;
 
     div.container-login {
-        background-color: #eee;
+        background-color: rgb(235, 235, 235);
         width: 440px;
         display: grid;
         margin: 0 auto;
         margin-top: 5px;
         box-shadow: 3px 3px 0 lightgray;
-        border-radius: 20px;
+        border-radius: 10px;
         h2 {
             justify-self: center;
         }
@@ -36,17 +38,21 @@ div.bg {
                 display: grid;
                 grid-template-rows: 1fr 2fr 1fr 2fr;
                 justify-self: left;
-                label {
-                    font-weight: bold;
-                }
                 input {
-                    background-color: rgb(209, 209, 209);
+                    background-color: #eee;
                     border: 0;
                     justify-self: center;
                     border-radius: 5px;
                     width: 180%;
                     padding-top: 10px;
                     padding-bottom: 10px;
+                    border-spacing: 20px;
+                    border-width: 1px;
+                    border-style: solid;
+                    border-color: darkorange;
+                    color: rgb(88, 88, 88);
+                    padding-inline: 10px;
+                    margin-block: 10px;
                 }
             }
             div.form-button {
@@ -58,23 +64,6 @@ div.bg {
                     align-self: center;
                     width: 140px;
                 }
-            }
-            button.btn-save {
-                border-radius: 10px;
-                border: 0;
-                margin: 10px;
-                font-weight: 600;
-                height: 40px;
-                font-size: medium;
-                background-color: #ffa935;
-                box-shadow: 3px 3px 0 darkorange;
-                color: rgb(155, 85, 0);
-            }
-            button.btn-save:hover {
-                background-color: #ffb85b;
-                box-shadow: 3px 3px 0 #df9100;
-                color: rgb(90, 50, 0);
-                cursor: pointer;
             }
         }
     }

@@ -1,8 +1,9 @@
-import { newProductRequest } from "../../../stores/ducks/product/actions"
+import { newProductRequest } from "../../../stores/ducks/product/actions";
 import { ProductArray } from "../../../stores/ducks/product/types";
 import { useDispatch } from "react-redux"
 import { useForm } from "react-hook-form"
 import { useState } from "react"
+import { BtnCancel, BtnRegister, BtnSave } from "../../Buttons";
 
 
 export default function NewProduct() {
@@ -29,16 +30,14 @@ export default function NewProduct() {
             {!showRegisterSection
                 ?
                 <div>
-                    <button className="btn-register" onClick={show}>
-                        <span>Cadastrar</span>
-                    </button>
+                    <BtnRegister onClick={show} h="15" color="darkblue" />
                 </div>
                 :
                 <div>
                     <form className="form-section" onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-labels">
                             <div>
-                                <label>Título</label>
+                                <label>Título</label><br />
                                 <input
                                     name="title"
                                     type="text"
@@ -47,7 +46,7 @@ export default function NewProduct() {
                                     ref={register} />
                             </div>
                             <div>
-                                <label>Descrição</label>
+                                <label>Descrição</label><br />
                                 <input
                                     name="description"
                                     type="text"
@@ -57,7 +56,7 @@ export default function NewProduct() {
                             </div>
                             <div>
 
-                                <label>Preço</label>
+                                <label>Preço</label><br />
                                 <input name="price"
                                     type="number"
                                     required
@@ -65,17 +64,17 @@ export default function NewProduct() {
                                     ref={register} />
                             </div>
                             <div>
-                                <label>Imagem</label>
+                                <label>Imagem</label><br />
                                 <input name="image"
                                     type="text"
                                     required
-                                    placeholder="Link da imagem"
+                                    placeholder="Ex: http://ambev.com/2.jpg"
                                     ref={register} />
                             </div>
                         </div>
                         <div className="form-buttons">
-                            <button className="btn-cancel" onClick={show}>Cancelar</button>
-                            <button className="btn-save" type="submit">Salvar</button>
+                            <BtnCancel onClick={show} h="15" color="darkred" />
+                            <BtnSave h="15" color="darkgreen" />
                         </div>
                     </form>
                 </div >}

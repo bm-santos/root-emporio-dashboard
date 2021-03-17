@@ -1,11 +1,12 @@
 header {
-    background-color: #f0f0f0;
+    background-color: #ffa935;
     grid-area: header;
     display: grid;
-    border-end-end-radius: 30px;
+    // border-end-end-radius: 30px;
     grid-template-columns: 2fr 5fr 1fr;
     grid-template-areas: "logo user logout";
     align-items: center;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 1);
     div.logo {
         justify-self: center;
         :hover {

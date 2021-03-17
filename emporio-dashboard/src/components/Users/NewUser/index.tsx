@@ -3,6 +3,7 @@ import { UserArray } from "../../../stores/ducks/user/types";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form"
 import { useState } from "react";
+import { BtnCancel, BtnRegister, BtnSave } from "../../Buttons";
 
 export default function NewUser() {
     const [showRegisterSection, setShowRegisterSection] = useState<boolean>(false)
@@ -27,9 +28,7 @@ export default function NewUser() {
             {!showRegisterSection
                 ?
                 <div>
-                    <button className="btn-register" onClick={show}>
-                        <span>Cadastrar</span>
-                    </button>
+                    <BtnRegister onClick={show} h="15" color="darkblue" />
                 </div>
                 :
                 <div>
@@ -75,8 +74,8 @@ export default function NewUser() {
                             </div>
                         </div>
                         <div className="form-buttons">
-                            <button className="btn-cancel" onClick={show}>Cancelar</button>
-                            <button className="btn-save" type="submit">Salvar</button>
+                            <BtnCancel onClick={show} h="15" color="darkred" />
+                            <BtnSave h="15" color="darkgreen" />
                         </div>
                     </form>
                 </div>}

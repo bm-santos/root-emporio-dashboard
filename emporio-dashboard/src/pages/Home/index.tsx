@@ -5,6 +5,7 @@ import Content from "../../components/Content";
 import { useEffect, useState } from "react";
 import { Redirect } from "react-router";
 import { Helmet } from "react-helmet"
+import { ProductsIcon, UserIcon } from "../../components/Images/Icons";
 
 export default function HomePage() {
     const { userID, isLogged, internalUsers, isAdmin } = useSelector((state: any) => state.userReducer)
@@ -37,12 +38,14 @@ export default function HomePage() {
                             onClick={() => setGoToLink("products")}>
                             {goToLink === "products" && <Redirect to="/products" exact />}
                             <p>Produtos cadastrados</p>
+                            <span><ProductsIcon h="40" color="black" /></span>
                             <span>{productList?.length}</span>
                         </div>
                         {isAdmin
                             ? <div className="total" onClick={() => setGoToLink("users")}>
                                 {goToLink === "users" && <Redirect to="/users" exact />}
                                 <p>Usuários cadastrados</p>
+                                <span><UserIcon h="40" color="black" /></span>
                                 <span>{internalUsers?.length}</span>
                             </div>
                             : <div className="editor-view" >

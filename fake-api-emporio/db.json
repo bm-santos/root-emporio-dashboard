@@ -27,20 +27,6 @@
       "name": "Sandra",
       "role": "editor",
       "id": 4
-    },
-    {
-      "email": "joao@ambev.com",
-      "password": "$2a$10$Rn/8/ffzcszRib3t/LoqKeJ49yLsMZPguy8nRn092zySM.bRDO3Re",
-      "name": "João",
-      "role": "editor",
-      "id": 5
-    },
-    {
-      "email": "mara@ambev.com",
-      "password": "$2a$10$VqIjEjN5XE0BSZGal3jiIucZ8DuTlwOgaYYMLi7qcHv7zvtubCt5m",
-      "name": "Mara",
-      "role": "admin",
-      "id": 6
     }
   ],
   "register": [],
@@ -108,20 +94,6 @@
       "price": "R$ 3,66",
       "image": "https://trimais.vteximg.com.br/arquivos/ids/1019507-1000-1000/foto_original.jpg?v=637479702247800000",
       "id": 8
-    },
-    {
-      "title": "Brazilian Brahma",
-      "description": "Brahma",
-      "price": "R$ 4,33",
-      "image": "https://www.imigrantesbebidas.com.br/bebida/images/products/full/131-cerveja-brahma-lata-350ml.jpg",
-      "id": 9
-    },
-    {
-      "title": "Cerveja Goose Island Midway 355ml",
-      "description": "Goose Island",
-      "price": "R$ 8,49",
-      "image": "https://emporiodacerveja.vtexassets.com/arquivos/ids/172313-800-auto?width=800&height=auto&aspect=true",
-      "id": 11
     }
   ]
 }

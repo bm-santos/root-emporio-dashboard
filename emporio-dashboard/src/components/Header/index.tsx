@@ -1,5 +1,5 @@
 import { logoutUser } from "../../stores/ducks/user/actions"
-import { LogoShield, LogoTextBox } from "../Images/Logo"
+import { LogoShield, LogoTextBox } from "../Images/Logos"
 import { useDispatch, useSelector } from "react-redux"
 import { Redirect } from 'react-router';
 import { useState } from 'react';
@@ -15,7 +15,7 @@ export default function Header() {
                 <>
                     {goHome && <Redirect to="/" exact />}
                     <div className="logo" onClick={() => setGoHome(true)}>
-                        <span><LogoShield h="35" /><LogoTextBox h="35" /></span>
+                        <span><LogoShield color="black" h="55" /><LogoTextBox h="55" /></span>
                     </div>
                     <div className="user">
                         Olá, <span><strong>{name}</strong></span> <span id={role}>{role}</span>

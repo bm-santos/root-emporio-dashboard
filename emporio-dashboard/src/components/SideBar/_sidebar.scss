@@ -5,14 +5,16 @@ aside {
     border-top-right-radius: 30px;
     border-bottom-left-radius: 30px;
     nav {
+        li:hover {
+            background-color: #bbb;
+        }
         ul {
+            box-shadow: 1px 1px 0 #ddd;
             margin-top: 0 auto;
-            padding: 0 0;
+            padding: 20px 0;
             display: grid;
             list-style-type: none;
-            li:hover {
-                background-color: #bbb;
-            }
+            padding-block: 20px;
             .link-menu {
                 text-decoration: none;
                 span + span {
@@ -21,7 +23,6 @@ aside {
             }
             li {
                 text-align: center;
-                line-height: 5vh;
                 font-family: "Lato", sans-serif;
                 color: #777;
                 font-weight: bold;
@@ -44,6 +45,7 @@ aside {
             grid-gap: 1px;
             margin: 0;
             ul {
+                box-shadow: none;
                 display: block;
                 margin-top: 0 auto;
                 padding: 0 0;

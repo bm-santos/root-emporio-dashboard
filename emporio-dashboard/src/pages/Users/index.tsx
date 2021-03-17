@@ -17,7 +17,7 @@ export default function UsersPage() {
                 ? <Redirect to={"/"} exact />
                 : <Content>
                     <h2>
-                        Usuários cadastrados: {internalUsers.length}
+                        Usuários cadastrados: <span>{internalUsers.length}</span>
                     </h2>
                     <div>
                         <NewUser />

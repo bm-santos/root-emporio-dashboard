@@ -1,0 +1,93 @@
+button.btn-login {
+    border-radius: 10px;
+    border: 0;
+    margin: 10px;
+    font-weight: 600;
+    height: 40px;
+    font-size: medium;
+    background-color: #ffa935;
+    box-shadow: 3px 3px 0 darkorange;
+    color: #9b5500;
+    span + span {
+        margin-inline: 5px;
+    }
+}
+button.btn-login:hover {
+    background-color: #ffb85b;
+    box-shadow: 3px 3px 0 #df9100;
+    color: rgb(90, 50, 0);
+    cursor: pointer;
+}
+button {
+    background-color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px;
+    margin-inline: 5px;
+    :hover {
+        cursor: pointer;
+    }
+}
+button.btn-delete {
+    background-color: rgb(226, 59, 59);
+    border: 0;
+    color: white;
+}
+button.btn-keep {
+    @extend .btn-delete;
+    background-color: rgb(82, 82, 230);
+}
+button.btn-delete:hover {
+    background: red;
+    cursor: pointer;
+}
+button.btn-keep:hover {
+    @extend .btn-delete:hover;
+    background: rgb(37, 37, 156);
+}
+
+.btn-register {
+    background-color: rgb(92, 113, 235);
+    color: white;
+    box-shadow: 3px 3px 0 rgb(41, 59, 158);
+    border-radius: 10px;
+    border: 0;
+    margin: 10px;
+    padding-inline: 30px;
+    font-weight: 600;
+    height: 50px;
+    font-size: medium;
+}
+.btn-register:hover {
+    background-color: rgb(41, 59, 158);
+    box-shadow: 3px 3px 0 rgb(13, 24, 83);
+    cursor: pointer;
+}
+
+.btn-cancel {
+    @extend .btn-register;
+    background-color: #f34040;
+    color: darkred;
+    height: 35px;
+    box-shadow: 3px 3px 0 #c50c0c;
+    justify-self: right;
+}
+.btn-cancel:hover {
+    @extend .btn-register:hover;
+    background-color: #830707;
+    box-shadow: 3px 3px 0 #380202;
+    color: white;
+}
+.btn-save {
+    @extend .btn-cancel;
+    background-color: #48c52f;
+    box-shadow: 3px 3px 0 #338a21;
+    color: darkgreen;
+    justify-self: left;
+}
+.btn-save:hover {
+    @extend .btn-cancel:hover;
+    background-color: darkgreen;
+    box-shadow: 3px 3px 0 #380202;
+    color: white;
+}
