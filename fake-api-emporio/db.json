@@ -10,7 +10,7 @@
     {
       "email": "mauricio@google.com",
       "password": "$2a$10$SCeCDXxD40jojmihyOfwJujk2MhC2a7HIeGFI8mEqOrlSbdYgCUKO",
-      "name": "Maricio",
+      "name": "Mauricio",
       "role": "editor",
       "id": 2
     },
@@ -22,11 +22,11 @@
       "id": 3
     },
     {
-      "email": "sandra@ambev.com",
-      "password": "$2a$10$c5fYKQfH7Io0.WPE7SciXeVSrH7MCtaSTQehwUWooAn6G22yPXF0m",
-      "name": "Sandra",
+      "email": "jose@ambev.com",
+      "password": "$2a$10$/AMeya8yTMeUSwjINyyVLOy5yuNQyN1NYCdawdi1vC2ZmEg5RAXAW",
+      "name": "José",
       "role": "editor",
-      "id": 4
+      "id": 7
     }
   ],
   "register": [],
@@ -89,11 +89,18 @@
       "id": 7
     },
     {
-      "title": "Brazilian Skol",
-      "description": "Skol",
-      "price": "R$ 3,66",
-      "image": "https://trimais.vteximg.com.br/arquivos/ids/1019507-1000-1000/foto_original.jpg?v=637479702247800000",
-      "id": 8
+      "title": "Brahma",
+      "description": "Brahma Chopp",
+      "price": "R$ 3",
+      "image": "https://formulachopp.cdn.3techstore.com.br/img/p/1/1/5/6/5/11565-large_default.jpg",
+      "id": 9
+    },
+    {
+      "title": "Heineken",
+      "description": "Heineken Long Neck 300ml",
+      "price": "R$ 4,60",
+      "image": "https://storage.googleapis.com/prod-southamerica-east1-staticfiles/media/sku/cerveja-long-neck-330ml-heineken-un.jpg",
+      "id": 10
     }
   ]
 }
