@@ -17,8 +17,8 @@ export default function NewProduct() {
         price = "R$ " + data.price.replace(/\./g, ',')
 
         const request = {
-            title: data.title,
-            description: data.description,
+            title: data.description,
+            description: data.title,
             price: price,
             image: data.image
         }
